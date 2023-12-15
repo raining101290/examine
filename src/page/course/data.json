@@ -1,0 +1,213 @@
+[
+    {
+     "id": "1",
+     "classname": "SSC Batch",
+     "versionname": "Bangla Version",
+     "description": "Bangla Version",
+     "groupname": "Science",
+     "subject": [
+      {
+       "subjectname": "",
+       "description": ""    
+      }
+     ],
+     "coursedetails": "",
+     "package": [
+      {
+       "packageid": "1",
+       "amount": 0,
+       "duration": 3,
+       "description": "Trial",
+       "url": ""
+      },
+      {
+       "packageid": "3",
+       "amount": 999,
+       "duration": 365,
+       "description": "1 Year",
+       "url": "https://shop.bkash.com/examamine01823345768/pay/bdt999/E4Z0uz"
+      }
+     ]
+    },
+    {
+     "id": "2",
+     "classname": "SSC Batch",
+     "versionname": "English Version",
+     "description": "English Version",
+     "groupname": "Science",
+     "subject": [
+      {
+       "subjectname": "",
+       "description": ""
+      }
+     ],
+     "coursedetails": "coursedetails xxx",
+     "package": [
+      {
+       "packageid": "4",
+       "amount": 0,
+       "duration": 3,
+       "description": "Trial",
+       "url": ""
+      },
+      {
+       "packageid": "5",
+       "amount": 999,
+       "duration": 180,
+       "description": "6 Month",
+       "url": "https://shop.bkash.com/examamine01823345768/pay/bdt999/E4Z0uz"
+      }
+     ]
+    },
+    {
+     "id": "3",
+     "classname": "SSC Batch",
+     "versionname": "Bangla Version",
+     "description": "Bangla Version",
+     "groupname": "Arts",
+     "subject": [
+      {
+       "subjectname": "",
+       "description": ""
+      }
+     ],
+     "coursedetails": "coursedetails",
+     "package": [
+      {
+       "packageid": "7",
+       "amount": 0,
+       "duration": 3,
+       "description": "Trial",
+       "url": ""
+      },
+      {
+       "packageid": "8",
+       "amount": 999,
+       "duration": 180,
+       "description": "6 Month",
+       "url": "https://shop.bkash.com/examamine01823345768/pay/bdt999/E4Z0uz"
+      }
+     ]
+    },
+    {
+     "id": "4",
+     "classname": "SSC Batch",
+     "versionname": "Bangla Version",
+     "description": "Bangla Version",
+     "groupname": "Commerce",
+     "subject": [
+      {
+       "subjectname": "",
+       "description": ""      
+      }
+     ],
+     "coursedetails": "coursedetails",
+     "package": [
+      {
+       "packageid": "10",
+       "amount": 0,
+       "duration": 3,
+       "description": "Trial",
+       "url": ""
+      },
+      {
+       "packageid": "11",
+       "amount": 999,
+       "duration": 180,
+       "description": "6 Month",
+       "url": "https://shop.bkash.com/examamine01823345768/pay/bdt999/E4Z0uz"
+      }
+     ]
+    },
+    {
+     "id": "5",
+     "classname": "HSC 2024",
+     "versionname": "Bangla Version",
+     "description": "Bangla Version",
+     "groupname": "Science",
+     "subject": [
+      {
+       "subjectname": "",
+       "description": ""
+      }
+     
+     ],
+     "coursedetails": "coursedetails",
+     "package": [
+      {
+       "packageid": "13",
+       "amount": 0,
+       "duration": 3,
+       "description": "Trial",
+       "url": ""
+      },
+      {
+       "packageid": "14",
+       "amount": 999,
+       "duration": 180,
+       "description": "6 Month",
+       "url": "https://shop.bkash.com/examamine01823345768/pay/bdt999/y0p4ss"
+      }
+     ]
+    },
+    {
+     "id": "6",
+     "classname": "HSC 2024",
+     "versionname": "Bangla Version",
+     "description": "Bangla Version",
+     "groupname": "Commerce",
+     "subject": [
+      {
+       "subjectname": "",
+       "description": ""
+      }
+     ],
+     "coursedetails": "coursedetails",
+     "package": [
+      {
+       "packageid": "16",
+       "amount": 0,
+       "duration": 30,
+       "description": "Trial",
+       "url": ""
+      },
+      {
+       "packageid": "17",
+       "amount": 999,
+       "duration": 30,
+       "description": "Six Month",
+       "url": "https://shop.bkash.com/examamine01823345768/pay/bdt999/y0p4ss"
+      }
+     ]
+    },
+    {
+     "id": "7",
+     "classname": "HSC 2024",
+     "versionname": "Bangla Version",
+     "description": "Bangla Version",
+     "groupname": "Arts",
+     "subject": [
+      {
+       "subjectname": "",
+       "description": ""     
+      }
+     ],
+     "coursedetails": "coursedetails",
+     "package": [
+      {
+       "packageid": "19",
+       "amount": 0,
+       "duration": 30,
+       "description": "Trial",
+       "url": ""
+      },
+      {
+       "packageid": "20",
+       "amount": 999,
+       "duration": 30,
+       "description": "Six Month",
+       "url": "https://shop.bkash.com/examamine01823345768/pay/bdt999/y0p4ss"
+      }
+     ]
+    }
+   ]

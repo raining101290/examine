@@ -1,0 +1,29 @@
+.inputBasic {
+    padding: 4px;
+    width: 40px;
+    height: 51px;
+    margin: 7px;
+  }
+  .greek {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .advanced {
+    display: flex;
+    justify-content: center;
+    .right {
+      margin-left: 10px;
+    }
+  }
+  .basic {
+    justify-content: center;
+    display: flex;
+    .left {
+      margin-right: 10px;
+    }
+    .middle {
+      margin-right: 10px;
+    }
+  }
+  

@@ -1,0 +1,388 @@
+
+
+@media (min-width:320px)  { 
+    /* smartphones, iPhone, portrait 480x320 phones */ 
+    /* HOme banner */
+.canvas-container
+{
+    margin-top: 320px;
+}
+.mcqexampage_divsecond
+{
+   /* height: '80%', backgroundColor: '#461A42', padding: 20, borderRadius: 20; */
+    background-color: #461A42;
+    height: auto; padding: 20px; border-radius: 20px;
+   
+}
+    .homebanner{
+        background-color: #52214e;
+        width: 100%;
+        padding: 37px;
+        overflow: auto;
+    
+    }
+.quizsetup_searchtextdiv
+{
+    width: 300px;
+    height: 40px;
+    border: 1px solid green;
+    padding: 0px;
+    display: flex;
+    margin-bottom: 200px;
+    margin: 0 auto;
+    border-radius: 25px;
+    margin-top: 20px;
+
+}
+.teachdashboardsearchtextsearch
+{
+    width: 300px;
+    height: 40px;
+    border: 0px solid green;
+    padding: 0px;
+    display: flex;
+    margin-bottom: 200px;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+.textsearchteacher {
+    height: 36px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 14px;
+}
+.itsmattertitle
+{
+    width: 100%;
+    float: left;
+    margin-top: 62px;
+
+}    
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.trustedbyimage
+{
+    display: none;
+}
+.imagewatch
+{
+    width: 127px;
+    margin-top: 52px;
+}
+.trusted-heading {
+    max-width: 700px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Poppins, sans-serif;
+    color: #212121;
+    font-size: 30px;
+    line-height: 114%;
+    font-weight: 600;
+    text-align: center;
+}
+.itsmatter{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 38px;
+    color: #ffffff;
+    font-family: 'verdana';
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0px;
+    padding: 0px;
+}
+    
+}
+.howcanask{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 35px;
+    color: #7E628D;
+    font-family: 'verdana';
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    padding: 0;
+}
+.mobiletext {
+    max-width: 186px;
+    padding: 9px;
+    margin: 0 auto;
+}
+.trusted-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 90%;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 75px;
+    padding-bottom: 140px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.MCQHome
+{
+   display: none;
+}
+.mcq{
+  display: none;
+}
+.assesment{
+    text-align: center;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+}
+.firstdivstudentdeashboard {
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+
+}
+@media (min-width:481px)  { 
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+    .homebanner{
+        background-color: #52214e;
+        width: 100%;
+        padding: 20px;
+        overflow: auto;
+    
+    }
+.canvas-container
+{
+    margin-top: 280px;
+    background-color: #212121;
+}
+    .firstdivstudentdeashboard {
+        width: 100%;
+        background-color: #ffffff;
+        height: 100px;
+        border-radius: 8px;
+        text-align: center;
+        justify-content: center;
+        box-shadow: 0 2px 4px 0px rgb(0 0 0 / 10%);
+        padding: 32px;
+        margin-bottom: 30px;
+    }
+.itsmattertitle
+{
+    width: 100%;
+    float: left;
+    display: flex;
+    margin-top: 31px;
+
+}    
+.itsmatter{
+    width: 50%;
+    float: left;
+    text-align: right;
+    font-weight: 600;
+    font-size: 29px;
+    margin-top: 100px;
+    color: #ffffff;
+    font-family: 'Poppins, sans-serif';
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    
+}
+.howcanask{
+    width: 50%;
+    float: left;
+    text-align: left;
+    font-weight: 600;
+    font-size: 29px;
+    margin-top: 100px;
+    color: #7E628D;
+    font-family: 'Poppins, sans-serif';
+    margin-left: 10px;
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.MCQHome
+{
+    position: absolute;
+    float: right;
+    text-align: right;
+    margin-left: 70%;
+    margin-top: 57px;
+}
+.mcq{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    background-color: #7E628D;
+    width: 66px;
+    height: 36px;
+    padding: 8px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.assesment{
+    text-align: center;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 50px;
+}
+}
+@media (min-width:641px)  { 
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+    .canvas-container
+    {
+        margin-top: 280px;
+        background-color: #212121;
+    }
+
+}
+@media (min-width:961px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+
+    .canvas-container
+    {
+        margin-top: 280px;
+        background-color: #212121;
+    }
+}
+@media (min-width:1025px) { 
+    /* big landscape tablets, laptops, and desktops */ 
+    .canvas-container
+    {
+        margin-top: 100px;
+        background-color: #aca7a7;
+        padding: 10px;
+    }
+}
+@media (min-width:1281px) { 
+    /* hi-res laptops and desktops */ 
+/* HOme banner */
+.mcqexampage_divsecond
+{
+    background-color: #461A42;
+    height: 100vh !important;
+    padding: 20px;
+}
+.quizsetup_searchtextdiv
+{
+    width: 500px;
+    height: 40px;
+    border: 1px solid green;
+    padding: 0px;
+    display: flex;
+    margin-bottom: 200px;
+    margin: 0 auto;
+    border-radius: 25px;
+    margin-top: 20px;
+
+}
+.teachdashboardsearchtextsearch
+{
+    width: 500px;
+    height: 40px;
+    border: 0px solid rgb(180, 180, 180);
+    padding: 0px;
+    display: flex;
+    margin-bottom: 200px;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+.homebanner{
+    background-color: #52214e;
+    width: 100%;
+    padding: 20px;
+    overflow: auto;
+    height: 500px;
+}
+.itsmattertitle
+{
+width: 100%;
+float: left;
+display: flex;
+margin-top: 31px;
+
+}    
+.itsmatter{
+width: 50%;
+float: left;
+font-weight: 600;
+font-size: 73px;
+margin-top: 100px;
+color: #ffffff;
+font-family: 'Poppins, sans-serif';
+clear: both;
+display: inline-block;
+overflow: hidden;
+white-space: nowrap;
+text-align: right;
+
+}
+.howcanask{
+width: 50%;
+float: left;
+text-align: left;
+font-weight: 600;
+font-size: 73px;
+margin-top: 100px;
+color: #7E628D;
+font-family: 'Poppins, sans-serif';
+margin-left: 10px;
+clear: both;
+display: inline-block;
+overflow: hidden;
+white-space: nowrap;
+}
+.MCQHome
+{
+position: absolute;
+float: right;
+text-align: right;
+margin-left: 75%;
+margin-top: 80px;
+}
+.mcq{
+color: rgb(255, 255, 255);
+font-size: 14px;
+background-color: #7E628D;
+width: 66px;
+height: 36px;
+padding: 8px;
+text-align: center;
+border-top-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+.assesment{
+text-align: center;
+font-size: 14px;
+color: rgb(255, 255, 255);
+margin-bottom: 50px;
+}
+}

@@ -1,0 +1,354 @@
+.examamineplatform
+{
+ background-color: #f2f2f2;
+ padding: 50px;
+
+}
+.coursedetails
+{
+ background-color: #ffffff;
+ padding: 50px;
+
+}
+.bookingform
+{
+   border: 3px solid #f2f2f2;
+   padding: 22px;
+   margin-top: 50px;
+}
+.bookingform ul
+{
+   padding: 10px;
+
+}
+.bookingform li
+{
+   padding: 10px;
+
+   
+}
+.bookingform h3
+{
+   padding: 20px;
+}
+.buynowul
+{
+   padding: 22px 10px 5px 8px;
+    margin-bottom: 23px;
+}
+.bookingform ul li
+{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  padding: 10px;
+}
+.bookingform .buynowdetials
+{
+   width: 100%;
+   background-color: green;
+   color: white;
+   border-radius: 10px;
+   padding: 11px;
+}
+.packagebutton
+{
+   width: 100%;
+   background-color: rgb(125, 63, 191);
+   padding: 10px;
+   margin-bottom: 10px;
+   display: flex;
+   justify-content: space-between;
+   text-decoration: none;
+   border-radius: 10px;
+   color: #ffffff;
+}
+.packagebutton:hover
+{
+   width: 100%;
+   background-color: rgb(136, 84, 192);
+   padding: 10px;
+   margin-bottom: 10px;
+   display: flex;
+   justify-content: space-between;
+   text-decoration: none;
+   border-radius: 10px;
+   color: #000;
+}
+.advantageimage1
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image1.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 201px;
+ border-radius: 15px;
+ display: flex;
+}
+.advantageimage2
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image2.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 201px;
+border-radius: 15px;
+ display: flex;
+}
+.advantageimage3
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image3.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 201px;
+border-radius: 15px;
+ display: flex;
+}
+.advantageimage4
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image4.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 201px;
+border-radius: 15px;
+ display: flex;
+}
+.coursedetailspar
+{
+
+    margin-top: 0px;
+   padding: 9px;
+}
+.classshow
+{
+   width: 80%;
+   margin: 0 auto;
+   margin-top: 20px;
+}
+.containerpage
+{
+   overflow: hidden;
+
+}
+.classshow .par
+{
+background: linear-gradient(180deg,#8bbcd8 -16.22%,#7481e4 204.73%); 
+line-height: 200px;
+font-size: 26px;
+color: #fff;
+text-align: center;
+border-radius: 20px;
+width: 100%;
+text-decoration: none;
+margin: 0 auto;
+text-align: center;
+align-items: center;
+margin-right: 20px;
+margin-bottom: 20px;
+}
+.buttoninfo
+{
+ height: 40px;
+ width: 100%;
+ background-color: cadetblue;
+ margin-bottom: 10px;
+ color: #f2f2f2;
+ padding: 8px;
+ border-radius: 10px;
+}
+.buttoninfo:hover
+{
+ height: 40px;
+ width: 100%;
+ background-color: rgb(61, 153, 156);
+ margin-bottom: 10px;
+ color: #f2f2f2;
+ padding: 8px;
+ border-radius: 10px;
+ cursor: pointer;
+}
+.slider1
+{
+   color: rgb(197 24 24);
+    z-index: 99999;
+    position: absolute;
+    padding: 156px;
+}
+.divright
+{
+   width: 100%;
+   height: 100%;
+   background-color: #f2f2f2;
+   display: inline-block;
+   text-align: center;
+}
+.examamineplatform_advantages_divright
+{
+ width: 100%;
+ height: auto;
+ margin-top: 0px;
+
+}
+.examamineplatform_advantages_divright .part1
+{
+   border-radius: 20px;
+   width: 50%;
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   padding: 30px;
+   margin-bottom: 10px; margin-right: 10px;
+   color: #f2f2f2;
+   background: linear-gradient(180deg,#8bbcd8 -16.22%,#7481e4 204.73%);
+}
+.borderclass
+{
+   
+   text-align: center;
+   background-color: #0666a3
+}
+.oneclasse
+{
+ width: 200px;
+ height: 200px;
+ font-size: 26px;
+ color: #fff;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book11.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+
+}
+.secondclasse
+{
+
+   width: 200px;
+   height: 200px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book22.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.thirdclasse
+{
+   width: 200px;
+   height: 200px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book33.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.fourclasse
+{
+   width: 200px;
+   height: 200px;
+ text-align: center;
+ font-size: 26px;
+ color: #fff;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book44.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.mcq
+{
+
+ background-image: url("../../public/book/mcq.png");
+ background-repeat: no-repeat;
+}
+.textnone
+{
+   text-decoration: none;
+}
+.examamineplatform_advantages
+{
+ background-color: rgb(136, 84, 192);
+ padding: 50px;
+}
+.practices .part1
+{
+ text-align: left;
+ padding: 7px;
+}
+
+.practices
+{
+ background-color: rgb(249, 249, 249);
+ padding: 50px;
+ height: 400px;
+}
+.part1 ul 
+{
+   color: #000;
+   font-size: 16px;
+}
+.part1 ul li
+{
+padding: 10px;
+}
+
+
+.examamineplatform_advantagesparts ul 
+{
+   color: #ffffff;
+   font-size: 16px;
+   text-align: left;
+   font-size: 18px;
+}
+.examamineplatform_advantagesparts ul li
+{
+padding: 10px;
+}
+
+
+
+
+

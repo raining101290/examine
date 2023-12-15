@@ -1,0 +1,351 @@
+.classmenu
+{
+ display: flex;
+ padding: 10px;
+ margin: 0 auto;
+}
+.classmenu ul
+{
+ padding: 1px;
+ display: flex;
+ margin: 0 auto;
+
+}
+.classmenu ul li 
+{
+ padding: 3px;
+width: 99px;
+ margin-right: 5px;
+}
+.classmenu ul li a
+{
+ padding: 8px;
+ background-color: rgb(204, 208, 204);
+ margin-right: 5px;
+ border-radius: 10px;
+ color: #000;
+ text-decoration: none;
+}
+.classmenu ul li a:hover
+{
+ padding: 8px;
+ background-color: rgb(90, 131, 90);
+ margin-right: 5px;
+ border-radius: 10px;
+
+ color: #ffff;
+}
+.banglaversion
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../../public/version/bangla-version.png");
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100%;
+ display: inline-block;
+ text-decoration: none;
+ margin: 0 auto;
+
+}
+.englishversion
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../../public/version/english-version.png");
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100%;
+ display: inline-block;
+ text-decoration: none;
+ margin: 0 auto;
+
+}
+.classone {
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class1.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+
+ width: 100%;
+ display: flex;
+}
+.classninescience
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class9-biggan.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classninearts
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class9-arts.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classnineaccounting
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class9-accounting.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classnine
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class9.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classhover
+{
+ background-color: aqua;
+}
+.classten
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class10arts.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classelevenbussiness
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class11business.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classelevenscience
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class11science.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classtwelvearts
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class12arts.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classtwelvescience
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class12science.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classtwelvebussiness
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class12business.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classelevenarts
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class11arts.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classten-bussiness
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class10business.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classten-science
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class10science.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classeight {
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class8.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 100%;
+ display: flex;
+}
+.classone img
+{
+ display: flex;
+ background-image: url("../../../public/book/all-book/class1.png");
+ background-repeat: no-repeat;
+
+ background-size: 100%;
+}
+.classfive
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class5.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+ text-decoration: none;
+ margin: 0 auto;
+ margin-top: 10px;
+}
+.classsix
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class6.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+ text-decoration: none;
+ margin: 0 auto;
+ margin-top: 10px;
+}
+.classseven
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class7.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+ text-decoration: none;
+ margin: 0 auto;
+ margin-top: 10px;
+}
+.classfour
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class4.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+ text-decoration: none;
+ margin: 0 auto;
+}
+.classthree
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class3.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+ text-decoration: none;
+ margin: 0 auto;
+}
+.classtwo
+{
+ height: 206px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../../public/book/all-book/class2.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+ text-decoration: none;
+ margin: 0 auto;
+}

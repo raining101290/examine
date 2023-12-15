@@ -1,0 +1,87 @@
+[
+ {
+  "id": "1",
+  "classname": "Nursery",
+  "status": "active"
+ },
+ {
+  "id": "2",
+  "classname": "KG",
+  "status": "active"
+ },
+ {
+  "id": "3",
+  "classname": "One",
+  "status": "active"
+ },
+ {
+  "id": "4",
+  "classname": "Two",
+  "status": "active"
+ },
+ {
+  "id": "5",
+  "classname": "Three",
+  "status": "active"
+ },
+ {
+  "id": "6",
+  "classname": "Four",
+  "status": "active"
+ },
+ {
+  "id": "7",
+  "classname": "Five",
+  "status": "active"
+ },
+ {
+  "id": "8",
+  "classname": "Six",
+  "status": "active"
+ },
+ {
+  "id": "9",
+  "classname": "Seven",
+  "status": "active"
+ },
+ {
+  "id": "10",
+  "classname": "Eight",
+  "status": "active"
+ },
+ {
+  "id": "11",
+  "classname": "Nine",
+  "status": "active"
+ },
+ {
+  "id": "12",
+  "classname": "Ten",
+  "status": "active"
+ },
+ {
+  "id": "13",
+  "classname": "Eleven",
+  "status": "active"
+ },
+ {
+  "id": "14",
+  "classname": "Twelve",
+  "status": "active"
+ },
+ {
+  "id": "15",
+  "classname": "S.S.C Model Test 2023",
+  "status": "active"
+ },
+ {
+  "id": "16",
+  "classname": "H.S.C Admission Test 2022",
+  "status": "active"
+ },
+ {
+  "id": "17",
+  "classname": "H.S.C. Model Test 2023",
+  "status": "active"
+ }
+]

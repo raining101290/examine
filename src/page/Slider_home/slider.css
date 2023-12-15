@@ -1,0 +1,79 @@
+@media (min-width: 769px) and (max-width: 2000px) {
+
+.carousel .slide .playstore {
+ transition: all .5s ease-in-out;
+ position: absolute;
+ bottom: 57px;
+ left: 50%;
+ margin-left: -44%;
+ width: 262px;
+ border-radius: 10px;
+ background: #fff;
+ /* color: #f6f4f4; */
+ padding: 8px;
+ font-size: 12px;
+ text-align: center;
+/*  opacity: 0.25;
+ transition: opacity .35s ease-in-out; */
+ height: 75px;
+}
+.playstore
+{
+ display: flex;
+ font-size: 24px;
+}
+.playstore_div
+{
+ font-size: 30px;
+}
+.playicon
+ {
+  max-width: 50px;
+  height: 50px;
+  margin-top: 8px;
+ }
+ .playstorealldiv
+ {
+  display: flex;
+  width: 100%;
+ }
+ 
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+ .carousel .slide .playstore {
+  transition: all .5s ease-in-out;
+     position: absolute;
+     bottom: 16px;
+     left: 50%;
+     margin-left: -44%;
+     width: 200px;
+     border-radius: 10px;
+     background: #fff;
+     /* color: #f6f4f4; */
+     padding: 0px;
+     font-size: 12px;
+     text-align: center;
+     height: 43px;
+ }
+ .playstorealldiv
+ {
+  display: flex;
+  width: 100%;
+ }
+ .playstore_div {
+  font-size: 20px;
+  margin-left: 10px;
+ }
+ .playicon
+ {
+  max-width: 27px;
+  height: 27px;
+  margin-left: 14px;
+  margin-top: 10px;
+
+ }
+}
+
+
+

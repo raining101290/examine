@@ -1,0 +1,29 @@
+<?php
+$getURL = $_GET['image'];
+$getid = $_GET['id'];
+// Remote image URL
+///$url = 'https://api.examamine.com/public/1664185281679-0cffcef81949ef51b9ca02aafcd0af63.jpg';
+//$url = 'https://api.examamine.com'.$getURL;
+echo $url = 'https://api.examamine.com/public/1664185281679-0cffcef81949ef51b9ca02aafcd0af63.jpg';
+//exit;
+// Image path
+$img = 'file/codexworld.png';
+
+// Save image
+$ch = curl_init($url);
+$fp = fopen($img, 'wb');
+curl_setopt($ch, CURLOPT_FILE, $fp);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_exec($ch);
+curl_close($ch);
+fclose($fp);
+//header("Location: https://examamine.com/Viewsingleresultmath/".$getid);
+
+
+?>
+
+<html>
+<body>
+	<img src='https://examamine.com/file/codexworld.png"/>
+</body>
+</html>

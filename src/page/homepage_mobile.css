@@ -1,0 +1,789 @@
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+ .oneclasse
+ {
+  width: 200px;
+  height: 200px;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book11.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ 
+ }
+ .thirdclasse
+{
+   width: 200px;
+   height: 200px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book33.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.fourclasse
+{
+   width: 200px;
+   height: 200px;
+ text-align: center;
+ font-size: 26px;
+ color: #fff;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book44.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px)
+and (max-device-width: 1024px) {
+ .oneclasse
+ {
+  width: 150px;
+  height: 150px;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book11.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ 
+ }
+ .thirdclasse
+{
+   width: 200px;
+   height: 200px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book33.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.fourclasse
+{
+   width: 150px;
+   height: 150px;
+ text-align: center;
+ font-size: 26px;
+ color: #fff;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book44.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.advantageimage1
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image1.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 150px;
+ border-radius: 15px;
+ display: flex;
+}
+.advantageimage2
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image2.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px)
+and (orientation: portrait) {
+ .oneclasse
+ {
+  width: 150px;
+  height: 150px;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book11.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ 
+ }
+ .thirdclasse
+{
+   width: 150px;
+   height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book33.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.fourclasse
+{
+   width: 150px;
+   height: 150px;
+ text-align: center;
+ font-size: 26px;
+ color: #fff;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book44.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.advantageimage1
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image1.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 150px;
+ border-radius: 15px;
+ display: flex;
+}
+.advantageimage2
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image2.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px)
+and (orientation: landscape) {
+ .oneclasse
+ {
+  width: 200px;
+  height: 200px;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book11.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ 
+ }
+ .thirdclasse
+ {
+    width: 200px;
+    height: 200px;
+  font-size: 26px;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book33.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ }
+ .advantageimage2
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image2.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {
+ .gfg-div {
+   width: 400px;
+   height: 200px;
+   background-color: chartreuse;
+   color: black;
+ }
+ .oneclasse
+ {
+  width: 150px;
+  height: 150px;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book11.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ 
+ }
+ .thirdclasse
+ {
+    width: 150px;
+    height: 150px;
+  font-size: 26px;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book33.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ }
+ .fourclasse
+{
+   width: 150px;
+   height: 150px;
+ text-align: center;
+ font-size: 26px;
+ color: #fff;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book44.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.advantageimage1
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image1.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 150px;
+ border-radius: 15px;
+ display: flex;
+}
+.advantageimage2
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image2.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+.advantageimage3
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image3.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+.advantageimage4
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image4.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px)
+and (-webkit-min-device-pixel-ratio: 2) {
+ .gfg-div {
+   width: 400px;
+   height: 400px;
+   background-color: brown;
+   color: black;
+ }
+ .oneclasse
+ {
+  width: 150px;
+  height: 150px;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book11.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 61px 11px 14px 11px;
+ 
+ }
+ .secondclasse
+{
+
+ line-height: 150px;
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book22.png");
+ background-repeat: no-repeat;
+ width: 150px;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 6px 11px 14px 11px;
+}
+.thirdclasse
+{
+   width: 150px;
+   height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book33.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 57px 11px 14px 11px;
+}
+.fourclasse
+{
+   width: 150px;
+   height: 150px;
+ text-align: center;
+ font-size: 26px;
+ color: #fff;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book44.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 57px 11px 14px 11px;
+}
+.advantageimage1
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image1.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 150px;
+ border-radius: 15px;
+ display: flex;
+}
+.advantageimage2
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image2.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+.advantageimage3
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image3.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+.advantageimage4
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image4.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px)
+and (-webkit-min-device-pixel-ratio: 2) {
+ .gfg-div {
+   width: 400px;
+   height: 400px;
+   background-color: cornflowerblue;
+   color: black;
+ }
+ .oneclasse
+ {
+  width: 150px;
+  height: 150px;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book11.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ 
+ }
+ .thirdclasse
+ {
+    width: 150px;
+    height: 150px;
+  font-size: 26px;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book33.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ }
+ .fourclasse
+{
+   width: 150px;
+   height: 150px;
+ text-align: center;
+ font-size: 26px;
+ color: #fff;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book44.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.advantageimage1
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image1.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 150px;
+ border-radius: 15px;
+ display: flex;
+}
+.advantageimage2
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image2.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+.advantageimage3
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image3.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+.advantageimage4
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image4.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px)
+and (-webkit-min-device-pixel-ratio: 3) {
+ .gfg-div {
+   width: 400px;
+   height: 400px;
+   background-color: darkgoldenrod;
+   color: black;
+ }
+ .oneclasse
+ {
+  width: 150px;
+  height: 150px;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book11.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ 
+ }
+ .thirdclasse
+ {
+    width: 150px;
+    height: 150px;
+  font-size: 26px;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-image: url("../../public/book/book33.png");
+  background-repeat: no-repeat;
+  text-decoration: none;
+  display: inline-block;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 11px 14px 11px;
+ }
+ .fourclasse
+{
+   width: 150px;
+   height: 150px;
+ text-align: center;
+ font-size: 26px;
+ color: #fff;
+ border-radius: 20px;
+ margin-bottom: 10px;
+ background-image: url("../../public/book/book44.png");
+ background-repeat: no-repeat;
+ text-decoration: none;
+ display: inline-block;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+ padding: 78px 11px 14px 11px;
+}
+.advantageimage1
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image1.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+ width: 150px;
+ border-radius: 15px;
+ display: flex;
+}
+.advantageimage2
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image2.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+.advantageimage3
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image3.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+.advantageimage4
+{
+ height: 150px;
+ font-size: 26px;
+ color: #fff;
+ text-align: center;
+ background-image: url("../../public/advantageimage/image4.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+margin-top: 9px;
+width: 150px;
+border-radius: 15px;
+ display: flex;
+}
+}
