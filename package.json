@@ -32,7 +32,7 @@
     "fabricjs-react": "^1.1.1",
     "font-awesome": "^4.7.0",
     "html-react-parser": "^3.0.4",
-    "html-to-image": "^1.10.8",
+    "html-to-image": "^1.11.11",
     "html2canvas": "^1.4.1",
     "i18next": "^22.4.10",
     "i18next-browser-languagedetector": "^7.0.1",

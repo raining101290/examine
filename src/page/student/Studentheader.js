@@ -1,23 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router';
-import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Toast from 'react-bootstrap/Toast';
-import Spinner from 'react-bootstrap/Spinner';
 import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons'
-import Button from 'react-bootstrap/Button';
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Carousel from 'react-bootstrap/Carousel';
 import { useHistory } from 'react-router-dom';
-import Dropdown from 'react-bootstrap/Dropdown';
 
 
 const Studentheader = () => {
@@ -26,7 +16,7 @@ const Studentheader = () => {
   const [errorsearch, setErrorsearch] = useState(false);
 
   const finddata = () => {
-    if (searchtext == "") {
+    if (searchtext === "") {
       setErrorsearch(true);
       return;
     }
@@ -40,10 +30,9 @@ const Studentheader = () => {
   },[]);
 
   const flogout = () => {
-    const token = localStorage.removeItem("token");
-    const studentid = localStorage.removeItem("studentid");
-    const userrole = localStorage.removeItem("userrole");
-
+    localStorage.removeItem("token");
+    localStorage.removeItem("studentid");
+    localStorage.removeItem("userrole");
     history.push('/');
   }
   //https://mui.com/material-ui/react-menu/

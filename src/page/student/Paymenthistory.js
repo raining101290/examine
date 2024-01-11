@@ -46,7 +46,7 @@ const Paymenthistory = () => {
         isloading ?
           <LoadingSpinner />
           :
-          users ?
+          users.length>0 ?
             users.map(d => {
               return <div class="card col-md-3 box-shadow" style={{
                 padding: 5, marginRight: 5, marginLeft: 5,
@@ -73,7 +73,13 @@ const Paymenthistory = () => {
             })
 
             :
-            ''
+            <Container style={{paddingTop: '100px', paddingBottom:'100px'}}>
+              <Row>
+                <Col xs={12} md={12}>
+                  <h3 style={{textAlign:'center'}}>No Package Found</h3>
+                </Col>
+              </Row>
+          </Container>
       }
 
     </div>

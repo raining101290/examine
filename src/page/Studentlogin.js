@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 //import useForm from 'react-hook-form'
-import { Button, Form } from 'reactstrap';
+import { Button } from 'reactstrap';
 import * as base from "./global";
 import axios from 'axios';
 import Header from './Header'
@@ -10,8 +10,8 @@ import Footer from './Footer'
 import ActivityIndicator from 'react-activity-indicator'
 import 'react-activity-indicator/src/activityindicator.css'
 import { Offline, Online } from "react-detect-offline";
-import { toast } from "react-toastify";
-import { errorToast, successToast } from "../page/library/toast";
+//import { toast } from "react-toastify";
+import { errorToast } from "../page/library/toast";
 
 
 
@@ -22,7 +22,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from "@material-ui/core/Input";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Alert } from 'react-bootstrap'
+//import { Alert } from 'react-bootstrap'
 
 export class Studentlogin extends Component {
 
@@ -46,7 +46,7 @@ export class Studentlogin extends Component {
   }
 
   handleValidation() {
-    let fields = this.state.fields;
+    //let fields = this.state.fields;
     let errors = {};
     let formIsValid = true;
     if (!this.state.fields["password"]) {
@@ -71,7 +71,7 @@ export class Studentlogin extends Component {
         password: this.state.fields["password"]
       })
         .then((response) => {
-          if (response.data.message == "found") {
+          if (response.data.message === "found") {
            // alert(response.data.classname)
            
            localStorage.setItem("userrole", 'Student');
@@ -85,11 +85,11 @@ export class Studentlogin extends Component {
             localStorage.setItem("versionname", response.data.versionname);
             this.setState({ loggdin: 'start', loaderfile: 'notloading', isLoading: false })
           }
-          else if (response.data == "Unauthorized") {
+          else if (response.data === "Unauthorized") {
             this.setState({ loggdin: 'stop', isLoading: false })
             errorToast("Invalid Email and Password");
           }
-          else if (response.data == "Unauthorized f") {
+          else if (response.data === "Unauthorized f") {
             this.setState({ loggdin: 'stop', isLoading: false })
             errorToast("Invalid Email and Password");
           }
@@ -113,7 +113,7 @@ export class Studentlogin extends Component {
   handleClickShowPassword = () => {
     // setValues({ ...values, showPassword: !values.showPassword });
    // alert(this.state.showPassword)
-    if(this.state.showPassword == false)
+    if(this.state.showPassword === false)
     {
      this.setState({
        showPassword: true
@@ -130,9 +130,10 @@ export class Studentlogin extends Component {
    
   render() {
     // alert(this.state.loggdin);
-    if (this.state.loggdin == 'start') {
+    if (this.state.loggdin === 'start') {
       return <Redirect to="/Studentdashboard" />
     }
+    console.log('Login:::')
     return (
       <div>
         <Header />
@@ -144,7 +145,7 @@ export class Studentlogin extends Component {
                 <div className="card-body p-0">
                   {/* Nested Row within Card Body */}
                   {
-                    this.state.isLoading == true ?
+                    this.state.isLoading === true ?
                       <ActivityIndicator />
                       :
                       <div className="row">

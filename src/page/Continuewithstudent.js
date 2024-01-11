@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 //import useForm from 'react-hook-form'
-import { Button, Form } from 'reactstrap';
+import { Button } from 'reactstrap';
 import * as base from "./global";
 import axios from 'axios';
 import Header from './Header'
@@ -11,23 +11,25 @@ import Footer from './Footer'
 import ActivityIndicator from 'react-activity-indicator'
 //npm install react-activity-indicator
 import 'react-activity-indicator/src/activityindicator.css'
-import { Offline, Online } from "react-detect-offline";
+//import { Offline, Online } from "react-detect-offline";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Alert } from 'react-bootstrap'
+//import { Alert } from 'react-bootstrap'
 import IconButton from '@material-ui/core/IconButton';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Input from "@material-ui/core/Input";
-import classdata from './data/class.json'
+//import classdata from './data/class.json'
 
 import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+//import PhoneInput from 'react-phone-number-input'
 import MuiPhoneNumber from 'material-ui-phone-number';
 
 
 export class Continuewithstudent extends Component {
+
+  
 
   constructor() {
     super();
@@ -58,9 +60,8 @@ export class Continuewithstudent extends Component {
 
 
   }
-
   handleValidation() {
-    let fields = this.state.fields;
+    //let fields = this.state.fields;
     let errors = {};
     let formIsValid = true;
     //  alert(this.state.fields["email"]);
@@ -77,14 +78,14 @@ export class Continuewithstudent extends Component {
       formIsValid = false;
       errors["mobileno"] = "Mobileno Required";
     }
-    if (!this.state.className) {
-      formIsValid = false;
-      errors["className"] = "Class Name Required";
-    }
-    if (!this.state.versionname) {
-      formIsValid = false;
-      errors["versionname"] = "Version Name Required";
-    }
+    // if (!this.state.className) {
+    //   formIsValid = false;
+    //   errors["className"] = "Class Name Required";
+    // }
+    // if (!this.state.versionname) {
+    //   formIsValid = false;
+    //   errors["versionname"] = "Version Name Required";
+    // }
     if (!this.state.fields["name"]) {
       formIsValid = false;
       errors["name"] = "Name Required";
@@ -108,18 +109,19 @@ export class Continuewithstudent extends Component {
         alert("Password is not Match")
       }
       else {
-       // alert(this.state.mobileno);
-        axios.post(base.BASE_URL + '/signupstudent', {
+        const registerObj = {
           email: this.state.fields["email"],
           password: this.state.fields["password"],
           name: this.state.fields["name"],
           mobileno: this.state.mobileno,
-          className: this.state.className,
-          groupname: this.state.groupname,
-          versionname: this.state.versionname
-        })
+          //className: this.state.className,
+          //groupname: this.state.groupname,
+          //versionname: this.state.versionname
+        }
+       // alert(this.state.mobileno);
+        axios.post(base.BASE_URL + '/signupstudent', registerObj)
           .then((response) => {
-            if (response.data == "save") {
+            if (response.data === "save") {
               localStorage.setItem("token", response.data.access_token);
               localStorage.setItem("studentid", this.state.fields["email"]);
               localStorage.setItem("fullname", this.state.fields["name"]);
@@ -131,39 +133,35 @@ export class Continuewithstudent extends Component {
               this.setState({ loggdin: 'start', loaderfile: 'notloading', isLoading: false })
 
             }
-            else if (response.data == "Unauthorized") {
+            else if (response.data === "Unauthorized") {
               this.setState({ loggdin: 'stop', isLoading: false })
               alert("Invalid Email and Password");
             }
-            else if (response.data == "Unauthorized f") {
+            else if (response.data === "Unauthorized f") {
 
               this.setState({ loggdin: 'stop', isLoading: false })
               alert("Invalid Email and Password");
 
             }
-            else if (response.data == "exits") {
+            else if (response.data === "exits") {
 
               this.setState({ loggdin: 'stop', isLoading: false })
               alert("Email Already Exits");
-
             }
-
 
           }, (error) => {
             console.log(error);
             alert(error)
           });
-
       }
-
 
     } else {
       // alert("Form has errors.")
     }
-
-
   }
+
   handleversion(event) {
+    console.log('BASE::', base.BASE_URL, base.BASE_URL_COLLEGE)
     //  alert(event.target.value)
     this.setState({
       versionname: event.target.value
@@ -177,7 +175,7 @@ export class Continuewithstudent extends Component {
   handleclassName(event) {
     // alert(event.target.value)
 
-    if (event.target.value == 'H.S.C Admission Test 2022') {
+    if (event.target.value === 'H.S.C Admission Test 2022') {
       this.setState({
         isgrouploading: 'yes',
         groupname: '',
@@ -185,42 +183,42 @@ export class Continuewithstudent extends Component {
 
       })
     }
-    else if (event.target.value == 'S.S.C Model Test 2023') {
+    else if (event.target.value === 'S.S.C Model Test 2023') {
       this.setState({
         isgrouploading: 'yes',
         groupname: '',
         className: event.target.value
       })
     }
-    else if (event.target.value == 'H.S.C. Model Test 2023') {
+    else if (event.target.value === 'H.S.C. Model Test 2023') {
       this.setState({
         isgrouploading: 'yes',
         groupname: '',
         className: event.target.value
       })
     }
-    else if (event.target.value == 'Catholic College Admission') {
+    else if (event.target.value === 'Catholic College Admission') {
       this.setState({
         isgrouploading: 'yes',
         groupname: '',
         className: event.target.value
       })
     }
-    else if (event.target.value == 'SSC Batch') {
+    else if (event.target.value === 'SSC Batch') {
       this.setState({
         isgrouploading: 'yes',
         groupname: '',
         className: event.target.value
       })
     }
-    else if (event.target.value == 'HSC 2024') {
+    else if (event.target.value === 'HSC 2024') {
       this.setState({
         isgrouploading: 'yes',
         groupname: '',
         className: event.target.value
       })
     }
-    else if (event.target.value == 'Eleven') {
+    else if (event.target.value === 'Eleven') {
       this.setState({
         isgrouploading: 'yes',
         groupname: '',
@@ -245,7 +243,7 @@ export class Continuewithstudent extends Component {
   handleClickShowPassword = () => {
     // setValues({ ...values, showPassword: !values.showPassword });
     // alert(this.state.showPassword)
-    if (this.state.showpassordfirsttxt == false) {
+    if (this.state.showpassordfirsttxt === false) {
       this.setState({
         showpassordfirsttxt: true
       })
@@ -260,7 +258,7 @@ export class Continuewithstudent extends Component {
   handleClickShowPasswordtwo = () => {
     // setValues({ ...values, showPassword: !values.showPassword });
     // alert(this.state.showPassword)
-    if (this.state.showpasswordsecondtxt == false) {
+    if (this.state.showpasswordsecondtxt === false) {
       this.setState({
         showpasswordsecondtxt: true
       })
@@ -282,7 +280,7 @@ export class Continuewithstudent extends Component {
   render() {
 
 
-    if (this.state.loggdin == 'start') {
+    if (this.state.loggdin === 'start') {
       return <Redirect to="/Studentdashboard" />
     }
     return (
@@ -295,7 +293,7 @@ export class Continuewithstudent extends Component {
               <div className="card o-hidden border-0 shadow-lg my-5">
                 <div className="card-body p-0">
                   {
-                    this.state.isLoading == true ?
+                    this.state.isLoading === true ?
                       <ActivityIndicator />
                       :
                       <div className="row">
@@ -313,7 +311,7 @@ export class Continuewithstudent extends Component {
                                 />
                                 <span style={{ color: "red", fontSize: 10 }}>{this.state.errors["name"]}</span>
                               </div>
-                              <div className="form-group">
+                              {/* <div className="form-group">
                                 <select className="form-control"
                                   onChange={this.handleclassName}>
                                   <option value="">Select-Class</option>
@@ -326,10 +324,10 @@ export class Continuewithstudent extends Component {
                                 </select>
                                 <span style={{ color: "red", fontSize: 10 }}>{this.state.errors["className"]}</span>
 
-                              </div>
-                              <div className="form-group">
+                              </div> */}
+                              {/* <div className="form-group">
                                 {
-                                  this.state.isgrouploading == 'yes' ?
+                                  this.state.isgrouploading === 'yes' ?
                                     <div>
                                       <select className="form-control"
                                         onChange={this.handlegroupname}>
@@ -343,9 +341,9 @@ export class Continuewithstudent extends Component {
                                     :
                                     ''
                                 }
-                              </div>
+                              </div> */}
 
-                              <div className="form-group">
+                              {/* <div className="form-group">
                                 <select className="form-control"
                                   onChange={this.handleversion}>
                                   <option value="">Select-Version</option>
@@ -353,7 +351,7 @@ export class Continuewithstudent extends Component {
                                   <option value="English Version">English Version</option>
                                 </select>
                                 <span style={{ color: "red", fontSize: 10 }}>{this.state.errors["versionname"]}</span>
-                              </div>
+                              </div> */}
                               <div className="form-group">
                                 {/*                                 <Input type="email" className="form-control"
                                   id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Mobile No"

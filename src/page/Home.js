@@ -163,7 +163,7 @@ const Home = () => {
           {/*  <span className="schools-span"> thousand of teacher</span> */}
         </h3>
         <img src="/images/template-2.png" className='trustedbyimage' style={{ width: '100%', marginTop: 60 }} />
-        <Row style={{ marginTop: 100, pading: 100 }} className='justify-content-md-center'>
+        <Row style={{ marginTop: 100, padding: 100 }} className='justify-content-md-center'>
           <Col className="col-md-3 col-6 align-items-center text-center "> {/* sm={3}  */}
 
             <Link to="/Courseversion/onetofive" className='oneclasse'> {/* sx={{ minWidth: 275, minHeight: 200 }}  */}
