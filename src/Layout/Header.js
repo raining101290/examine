@@ -27,9 +27,12 @@ const Header = () => {
 
 
   const flogout = () => {
-    const token = localStorage.removeItem("token");
-    const studentid = localStorage.removeItem("vendoremailaddress");
-    window.localStorage.clear();
+    localStorage.removeItem("token");
+    localStorage.removeItem("vendoremailaddress");
+    localStorage.removeItem("userrole");
+    localStorage.removeItem("examid");
+    //window.localStorage.clear();
+    //localStorage.clear();
     history.push('/');
   }
 
