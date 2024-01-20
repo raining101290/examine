@@ -33,7 +33,7 @@ const Coachingdisplay = () => {
       className: '',
       groupname: '',
       versionname:'',
-      errors:{},
+      errors: {},
       isgrouploading: ''
   })
 
@@ -50,12 +50,19 @@ const Coachingdisplay = () => {
 
     });
   }
-  
+
+  const isEmptyLoalStorage =()=>{
+    if(localStorage.getItem('className') === "" ||
+    localStorage.getItem('className') === "undefined" ||
+    localStorage.getItem('groupname') === "" ||
+    localStorage.getItem('groupname') === "undefined" ||
+    localStorage.getItem('versionname') === "" ||
+    localStorage.getItem('versionname') === "undefined"){
+      return true
+    }
+  }
   useEffect(() => {
-    if(!localStorage.getItem('className') || 
-    !localStorage.getItem('groupname') || 
-    !localStorage.getItem('versionname'))
-    {
+    if(isEmptyLoalStorage()){
       setNewUser(true)
     }else{
       getData();
@@ -85,7 +92,7 @@ const Coachingdisplay = () => {
     return formIsValid;
   }
 
-  const register = ()=>{
+  const setLocalStorage = ()=>{
     if(handleValidation()){
       localStorage.setItem("className", studentInfo.className);
       localStorage.setItem("groupname", studentInfo.groupname);
@@ -93,6 +100,10 @@ const Coachingdisplay = () => {
       setNewUser(false)
     }
   }
+
+  useEffect(()=>{
+    getData();
+  },[newUser])
 
   const handleversion=(event)=> {
     setStudentInfo((prev) => ({
@@ -126,10 +137,13 @@ const Coachingdisplay = () => {
       }));
     }
   }
-console.log('CHECK::', newUser)
-console.log('CHECK::', localStorage.getItem('className'))
-console.log('CHECK::', localStorage.getItem('groupname'))
-console.log('CHECK::', localStorage.getItem('versionname'))
+
+  console.log('CHECK::', newUser)
+  console.log('CHECK::', localStorage.getItem('className'))
+  console.log('CHECK::', localStorage.getItem('groupname'))
+  console.log('CHECK::', localStorage.getItem('versionname'))
+  console.log('CHECK::', users)
+
   return (
     <Container>
       {newUser ? (
@@ -188,7 +202,7 @@ console.log('CHECK::', localStorage.getItem('versionname'))
                                 <span style={{ color: "red", fontSize: 10 }}>{studentInfo.errors["versionname"]}</span>
                               </div>
 
-                              <Button type="button" className="btn btn-primary btn-user btn-block" onClick={register}>
+                              <Button type="button" className="btn btn-primary btn-user btn-block" onClick={setLocalStorage}>
                                 Submit
                               </Button>
                             </form>

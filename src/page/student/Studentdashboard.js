@@ -111,7 +111,8 @@ const Studentdashboard = () => {
     getData();
     getDatacheckpayment();
     checktrialdata();
-  }, [])
+    //eslint-disabled-next-line
+  }, [checkpayment])
 
 
   const checktrialdata = () => {
@@ -128,7 +129,7 @@ const Studentdashboard = () => {
     });
   }
   
-
+console.log('checkpayment',checkpayment)
   return (
     <div style={{ backgroundColor: '#ffffff', width: '100%' }}>
       <Studentheader />

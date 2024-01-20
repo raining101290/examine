@@ -94,7 +94,6 @@ export class Studentlogin extends Component {
             errorToast("Invalid Email and Password");
           }
         }, (error) => {
-          console.log(error);
           alert(error)
         });
 
@@ -133,7 +132,6 @@ export class Studentlogin extends Component {
     if (this.state.loggdin === 'start') {
       return <Redirect to="/Studentdashboard" />
     }
-    console.log('Login:::')
     return (
       <div>
         <Header />
