@@ -40,7 +40,7 @@ const Studentheader = () => {
     <Navbar expand="lg" fixed="top">
       <Container fluid>
         <Navbar.Brand href="/">
-          <img src='/images/logo.png' style={{ width: 78, height: 58, marginLeft: 10 }} />
+          <img alt="logo" src='/images/logo.png' style={{ width: 78, height: 58, marginLeft: 10 }} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" style={{ marginRight: 20 }} />
         <Navbar.Collapse id="navbarScroll">
@@ -65,7 +65,7 @@ const Studentheader = () => {
                 </Link>
               </div>
               {
-                errorsearch == true ?
+                errorsearch === true ?
                   <p style={{ color: 'red', fontSize: 12 }}>Fill up the search bar</p>
                   :
                   ''
@@ -78,7 +78,9 @@ const Studentheader = () => {
           <Form className="d-flex">
             <Link to="/Studentdashboard" className='btn' variant="outline-success"
               style={{ marginRight: 10 }}>
-              Dashboard {localStorage.getItem('userrole')}</Link>
+              Dashboard 
+              {/* {localStorage.getItem('userrole')} */}
+              </Link>
             <Link to="/Editstudentprofile" className='btn' variant="outline-success"
               style={{ marginRight: 10 }}>
               Profile</Link>
