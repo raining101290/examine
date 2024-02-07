@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import * as base from "../global";
@@ -11,29 +10,16 @@ import axios from 'axios';
 import Examimage from './Examimage';
 import Remaningquestion from './Remaningquestion'
 import groupBy from 'json-groupby';
-import classdata from '../data/class.json'
 import LoadingSpinner from '../library/LoadingSpinner';
 
-const Coachingdisplay = () => {
-  const storedClass = localStorage.getItem('className') || '0';
-  const storedGroup = localStorage.getItem('groupname') || '0';
-  const storedVersion = localStorage.getItem('versionname') || '0';
+const Coachingdisplay = ({newUser, setNewUser}) => {
+  
   //let subtitle;
   //const [modalIsOpen, setIsOpen] = React.useState(false);
   const [users, setUsers] = useState([]);
-  const [newUser, setNewUser] = useState(false)
   const [loading, setLoading] = useState(false)
   //const [studentid, setStudentid] = useState(localStorage.getItem('studentid'))
-  const [selectedClass, setSelectedClass] = useState(storedClass);
-  const [selectedGroup, setSelectedGroup] = useState(storedGroup);
-  const [selectedVersion, setSelectedVersion] = useState(storedVersion);
-  const [studentInfo, setStudentInfo] = useState({
-      className: '',
-      groupname: '',
-      versionname:'',
-      errors: {},
-      isgrouploading: ''
-  })
+  
 
   const getData = () => {
 
@@ -76,98 +62,22 @@ const Coachingdisplay = () => {
     //var after = groupBy(users, ['subjectname']);
   }, [])
   
-  const handleValidation = ()=> {
-    //let fields = this.state.fields;
-    let errors = {};
-    let formIsValid = true;
-    
-    if (!studentInfo.className) {
-      formIsValid = false;
-      errors["className"] = "Class Name Required";
-    }
-    if (!studentInfo.versionname) {
-      formIsValid = false;
-      errors["versionname"] = "Version Name Required";
-    }
-    
-    // alert(' Version ' + this.state.versionname + '-classname-' +this.state.className)
-    setStudentInfo((prev) => ({
-      ...prev,
-      errors: errors
-    }));
-    return formIsValid;
-  }
-
-  const setLocalStorage = ()=>{
-    if(handleValidation()){
-      localStorage.setItem("className", studentInfo.className);
-      localStorage.setItem("groupname", studentInfo.groupname);
-      localStorage.setItem("versionname", studentInfo.versionname);
-      setNewUser(false)
-      setUsers([])
-      getData();
-    }
-  }
+  
 
   useEffect(()=>{
     getData();
   },[newUser])
 
-  const handleversion=(event)=> {
-    setSelectedVersion(event.target.value)
-    setStudentInfo((prev) => ({
-      ...prev,
-      versionname: event.target.value
-    }));
-  }
-
-  const handlegroupname=(event) =>{
-    setSelectedGroup(event.target.value)
-    setStudentInfo((prev) => ({
-      ...prev,
-      groupname: event.target.value
-    }));
-  }
-
-  const handleclassName = (event)=> {
-    setSelectedClass(event.target.value)
-    if (event.target.value) {
-      setStudentInfo((prev) => ({
-        ...prev,
-        isgrouploading: true,
-        className: event.target.value
-      }));
-    }
-    else {
-      setSelectedGroup('0')
-      setStudentInfo((prev) => ({
-        ...prev,
-        isgrouploading: false,
-        className: event.target.value
-      }));
-    }
-  }
-
-  const clearLocalStorage = () =>{
-    localStorage.removeItem("className", studentInfo.className);
-    setSelectedClass('0')
-    setSelectedGroup('0')
-    setSelectedVersion('0')
-    localStorage.removeItem("groupname", studentInfo.groupname);
-    localStorage.removeItem("versionname", studentInfo.versionname);
-  }
-  console.log('users::',users)
-
   return (
     <Container>
       
-        <Row>
+        {/* <Row>
           <div className="row justify-content-center">
             <div className="col-xl-10 col-lg-12 col-md-9">
               <div className="card o-hidden border-0">
                 <div className="card-body p-0">
                   <div className="row">
-                        {/* <div className="col-lg-6 d-none d-lg-block bg-login-image" /> */}
+                        <div className="col-lg-6 d-none d-lg-block bg-login-image" />
                     <div className="col-md-12">
                       <div className="p-5">
                         <div className="text-center">
@@ -241,7 +151,7 @@ const Coachingdisplay = () => {
               </div>
             </div>
           </div>
-        </Row>
+        </Row> */}
       
       {
         loading ? 
