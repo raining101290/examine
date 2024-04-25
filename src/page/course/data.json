@@ -15,6 +15,7 @@
      "package": [
       {
        "packageid": "1",
+       "packagename":"Trial Pack",
        "amount": 0,
        "duration": 3,
        "description": "Trial",
@@ -22,6 +23,7 @@
       },
       {
        "packageid": "3",
+       "packagename":"1 Year Pack",
        "amount": 999,
        "duration": 365,
        "description": "1 Year",

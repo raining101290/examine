@@ -35,10 +35,10 @@ export class TeacherSchool extends Component {
         const formdata = {
             pagetype: "Homepage"
         }
-        axios.post(base.BASE_URL + "/visitor", formdata, {
-        }).then(res => {
-            console.log('data..file..' + res.data);
-        })
+        // axios.post(base.BASE_URL + "/visitor", formdata, {
+        // }).then(res => {
+        //     console.log('data..file..' + res.data);
+        // })
 
         axios.get(base.BASE_URL + '/getschooluniqueid', {
             headers: {

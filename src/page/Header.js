@@ -55,13 +55,13 @@ const Header = (props) => {
  
    }
   const flogout = () => {
-    alert('');
-    localStorage.removeItem("token");
-    localStorage.removeItem("emailaddress");
-    localStorage.removeItem("studentid");
-    localStorage.removeItem("vendoremailaddress");
-    localStorage.removeItem("userrole");
-
+    //alert('');
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("emailaddress");
+    // localStorage.removeItem("studentid");
+    // localStorage.removeItem("vendoremailaddress");
+    // localStorage.removeItem("userrole");
+    localStorage.clear();
     setLogout(true);
     window.location.reload()
 

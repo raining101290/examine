@@ -192,10 +192,10 @@ const Admissiontestpayment = (props) => {
                         {
                           datap.map((d) => {
                             //"https://shop.bkash.com/examamine01823345768/pay/bdt500/Mbc1W7"
-                            return d.packageid == props.match.params.id ?
+                            return d.packageid === props.match.params.id ?
                               <div>
                                 {
-                                  d.amount == 0 ?
+                                  d.amount === 0 ?
                                     <Button style={{ backgroundColor: 'rgb(108, 66, 152)' }}
                                       onClick={() => {
                                         //alert();
@@ -246,7 +246,7 @@ const Admissiontestpayment = (props) => {
                           datap.map((d) => {
                             //"https://shop.bkash.com/examamine01823345768/pay/bdt500/Mbc1W7"
                             /* 10 taka URL  https://shop.bkash.com/examamine01823345768/pay/bdt10/oHYkAZ */
-                            return d.packageid == props.match.params.id ?
+                            return d.packageid === props.match.params.id ?
                          /*      <Iframe url={d.url} */
                               <>
                               <Iframe url={d.url}

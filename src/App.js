@@ -1,6 +1,6 @@
-import './App.css';
-import { ToastContainer } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
+import './App.css'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Home from './page/Home'
 import Registration from './page/Registration'
 import Dashboard from './page/Dashboard'
@@ -35,13 +35,15 @@ import Edituserssetup from './page/Edituserssetup'
 import Editaddnewexam from './page/Editaddnewexam'
 import Addnewstudent from './page/Addnewstudent'
 import Addexamimage from './page/Addexamimage'
-import Music from './page/Music'
+//import Music from './page/Music'
 
-import Termsandconditions from './page/Terms/Termsandconditions';
+import Termsandconditions from './page/Terms/Termsandconditions'
 
 //student module
 import Studentlogin from './page/Studentlogin'
 import Studentdashboard from './page/student/Studentdashboard'
+import Studentdashboard2 from './page/student/Studentdashboard2'
+import StudentExams from './page/student/StudentExams'
 import Starttype from './page/student/Starttype'
 import Subjectpage from './page/student/Subjectpage'
 import Exampage from './page/student/Exampage'
@@ -62,8 +64,6 @@ import Resultpageviewhistory from './page/student/Resultpageviewhistory'
 
 import Viewsingleresult from './page/Viewsingleresult'
 import Viewsingleresultmath from './page/Viewsingleresultmath'
-import Fonta from './page/Fonta'
-import Testcanva from './page/Testcanva'
 import Easytoacton from './page/Easytoacton'
 import Teacher from './page/Teacher'
 import Changeimage from './page/Changeimage'
@@ -100,323 +100,430 @@ import Coursedetailspage from './page/course/Coursedetailspage'
 import Courseversion from './page/course/Courseversion'
 import Viewcart from './page/course/Viewcart'
 import Changepassword from './page/admin/Changepassword'
-import  Studentviewpayment from './page/admin/Studentviewpayment'
+import Studentviewpayment from './page/admin/Studentviewpayment'
 import Copyexams from './page/admin/Copyexams'
 import Adminexamsetuplist from './page/admin/Adminexamsetuplist'
 import Copyquestion from './page/admin/Copyquestion'
 
 import Listofexams from './page/Listofexams'
 //import Audiosetup from './page/Audiosetup'
-
-
-import i18n from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
-
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import SelectExamType from './page/student/SelectExamType'
+import { AppProvider } from './context/AppProvider'
+import BkashPayment from './page/student/BkashPayment'
+import Examtypes from './page/Examtypes'
+import AddExamType from './page/AddExamType'
+import Package from './page/Packages'
+import AddPackage from './page/AddPackage'
+import EditPackage from './page/EditPackage'
 
 function App() {
-    return (
+  return (
+    <AppProvider>
+      <Router>
+        <ToastContainer />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/Continuewithstudent">
+            <Continuewithstudent />
+          </Route>
+          <Route exact path="/Teacher">
+            <Teacher />
+          </Route>
 
-        <Router>
-            <ToastContainer />
+          <Route exact path="/Paymenthistory">
+            <Paymenthistory />
+          </Route>
+          <Route exact path="/Copyexams">
+            <Copyexams />
+          </Route>
+          <Route exact path="/Adminexamsetuplist">
+            <Adminexamsetuplist />
+          </Route>
+          <Route exact path="/Students">
+            <Students />
+          </Route>
+          <Route exact path="/Settimeouttest">
+            <Settimeouttest />
+          </Route>
+          <Route exact path="/Loadingcolor">
+            <Loadingcolor />
+          </Route>
 
-            <Switch>
-                <Route exact path="/">
-                    <Home />
+          <Route exact path="/Studentlogin">
+            <Studentlogin />
+          </Route>
+          <Route exact path="/Editprofilepage">
+            <Editprofilepage />
+          </Route>
+          <Route exact path="/Approveexam">
+            <Approveexam />
+          </Route>
+          <Route exact path="/Modalmath">
+            <Modalmath />
+          </Route>
 
-                </Route>
+          <Route
+            exact
+            path="/Admissiontestpayment/:id"
+            component={Admissiontestpayment}
+          ></Route>
+          <Route
+            exact
+            path="/Studentviewpayment/:id"
+            component={Studentviewpayment}
+          ></Route>
+          <Route
+            exact
+            path="/Copyquestion/:id/:examname"
+            component={Copyquestion}
+          ></Route>
 
-                <Route exact path="/Continuewithstudent">
-                    <Continuewithstudent />
-                </Route>
-                <Route exact path="/Teacher">
-                    <Teacher />
-                </Route>
+          <Route exact path="/Bkconfirmlists">
+            <Bkconfirmlists />
+          </Route>
+          <Route exact path="/Editor">
+            <Editor />
+          </Route>
+          <Route exact path="/Continuewithteacher">
+            <Continuewithteacher />
+          </Route>
+          <Route exact path="/Editstudentprofile">
+            <Editstudentprofile />
+          </Route>
+          <Route exact path="/Studentdashboard">
+            <Studentdashboard />
+          </Route>
+          <Route exact path="/ShowExams">
+            <StudentExams />
+          </Route>
+          <Route exact path="/bkashPayment">
+            <BkashPayment />
+          </Route>
+          <Route exact path="/SelectExamType">
+            <SelectExamType />
+          </Route>
+          <Route exact path="/Listofpackages">
+            <Package />
+          </Route>
+          <Route exact path="/AddPackage">
+            <AddPackage />
+          </Route>
+          <Route exact path="/EditPackage/:id">
+            <EditPackage />
+          </Route>
+          <Route exact path="/Listofexamtypes">
+            <Examtypes />
+          </Route>
+          <Route exact path="/AddExamType">
+            <AddExamType />
+          </Route>
+          <Route exact path="/Studentdashboard2">
+            <Studentdashboard2 />
+          </Route>
+          <Route exact path="/TeacherSchool">
+            <TeacherSchool />
+          </Route>
+          <Route exact path="/Signupwithaccount">
+            <Signupwithaccount />
+          </Route>
+          <Route exact path="/Signinwithaccount">
+            <Signinwithaccount />
+          </Route>
+          <Route exact path="/Activityteacher">
+            <Activityteacher />
+          </Route>
 
-                <Route exact path="/Paymenthistory">
-                    <Paymenthistory />
-                </Route>
-                <Route exact path="/Copyexams">
-                    <Copyexams />
-                </Route>
-                <Route exact path="/Adminexamsetuplist">
-                    <Adminexamsetuplist />
-                </Route>
-                
-                
-                <Route exact path="/Students">
-                    <Students />
-                </Route>
-                <Route exact path="/Settimeouttest">
-                    <Settimeouttest />
-                </Route>
-                <Route exact path="/Loadingcolor">
-                    <Loadingcolor />
-                </Route>
+          <Route exact path="/Changeimage">
+            <Changeimage />
+          </Route>
+          <Route exact path="/Studentuserlist">
+            <Studentuserlist />
+          </Route>
+          <Route exact path="/Paymentpaid">
+            <Paymentpaid />
+          </Route>
+          <Route exact path="/Resulttransaction">
+            <Resulttransaction />
+          </Route>
+          <Route exact path="/Termsandconditions">
+            <Termsandconditions />
+          </Route>
 
-                <Route exact path="/Studentlogin">
-                    <Studentlogin />
-                </Route>
-                <Route exact path="/Editprofilepage">
-                    <Editprofilepage />
-                </Route>
-                <Route exact path="/Approveexam">
-                    <Approveexam />
-                </Route>
-                <Route exact path="/Modalmath">
-                    <Modalmath />
-                </Route>
+          <Route
+            exact
+            path="/Courseversion/:id"
+            component={Courseversion}
+          ></Route>
 
-                <Route exact path="/Admissiontestpayment/:id" component={Admissiontestpayment}>
-                </Route>
-                <Route exact path="/Studentviewpayment/:id" component={ Studentviewpayment}>
-                </Route>
-                <Route exact path="/Copyquestion/:id/:examname" component={ Copyquestion }>
+          <Route
+            exact
+            path="/Starttoprocesscourse/:id"
+            component={Starttoprocesscourse}
+          ></Route>
 
-                </Route>
+          <Route
+            exact
+            path="/Coursedetailspage/:version/:classnames/:singleclass/:groupname"
+            component={Coursedetailspage}
+          ></Route>
+          <Route
+            exact
+            path="/Viewcart/:version/:classnames/:singleclass/:packageid"
+            component={Viewcart}
+          ></Route>
+          <Route
+            exact
+            path="/Addnewstudentedit/:id"
+            component={Addnewstudentedit}
+          ></Route>
 
-                <Route exact path="/Bkconfirmlists">
-                    <Bkconfirmlists />
-                </Route>
+          <Route exact path="/Bkapprove/:id" component={Bkapprove}></Route>
+          <Route exact path="/Readmore/:id" component={Readmore}></Route>
 
+          <Route
+            exact
+            path="/Viewquestiondetails/:id/:ids"
+            component={Viewquestiondetails}
+          ></Route>
 
+          <Route
+            exact
+            path="/Subjectfilterlist/:id/:ids/:idss"
+            component={Subjectfilterlist}
+          ></Route>
 
-                <Route exact path="/Editor">
-                    <Editor />
-                </Route>
+          <Route
+            exact
+            path="/Studentfindsubject/:id/:ids/:idss"
+            component={Studentfindsubject}
+          ></Route>
 
+          <Route
+            exact
+            path="/Coursedetails/:id/:ids"
+            component={Coursedetails}
+          ></Route>
 
+          <Route exact path="/Starttype/:id" component={Starttype}></Route>
+          <Route exact path="/Subjectpage/:id" component={Subjectpage}></Route>
+          <Route exact path="/Exampage/:id/:ids" component={Exampage}></Route>
+          <Route exact path="/Startquiz/:id" component={Startquiz}></Route>
+          <Route
+            exact
+            path="/Questiondetails/:id/:ids"
+            component={Questiondetails}
+          ></Route>
+          <Route exact path="/Approve/:id" component={Approve}></Route>
+          <Route
+            exact
+            path="/Startquiztwo/:id/:ids/:idss"
+            component={Startquiztwo}
+          ></Route>
+          <Route
+            exact
+            path="/Startquizsaveexits/:id/:serial/:totalquiz"
+            component={Startquizsaveexits}
+          ></Route>
+          <Route exact path="/Resultpage/:id" component={Resultpage}></Route>
+          <Route
+            exact
+            path="/Resultpageviewhistory/:id"
+            component={Resultpageviewhistory}
+          ></Route>
+          <Route
+            exact
+            path="/Viewsingleresultmath"
+            component={Viewsingleresultmath}
+          >
+            <Viewsingleresultmath />
+          </Route>
+          <Route
+            exact
+            path="/Viewteachermarkingimage/:id/:ids"
+            component={Viewteachermarkingimage}
+          ></Route>
+          <Route
+            exact
+            path="/Markingwrittingexam/:id/:ids/:idss/:idsss"
+            component={Markingwrittingexam}
+          ></Route>
+          <Route
+            exact
+            path="/Addexamimage/:id"
+            component={Addexamimage}
+          ></Route>
 
+          <Route exact path="/Easytoacton">
+            <Easytoacton />
+          </Route>
 
+          <Route exact path="/Schoolcollegesetup">
+            <Schoolcollegesetup />
+          </Route>
+          <Route exact path="/Examsetuplist">
+            <Examsetuplist />
+          </Route>
+          <Route exact path="/Groupsetuplist">
+            <Groupsetuplist />
+          </Route>
+          <Route exact path="/Groupsetup">
+            <Groupsetup />
+          </Route>
+          <Route exact path="/Sectionsetup">
+            <Sectionsetup />
+          </Route>
+          <Route exact path="/Sectionsetuplist">
+            <Sectionsetuplist />
+          </Route>
+          <Route exact path="/Forgetpassword">
+            <Forgetpassword />
+          </Route>
 
-                <Route exact path="/Continuewithteacher">
-                    <Continuewithteacher />
-                </Route>
-                <Route exact path="/Editstudentprofile">
-                    <Editstudentprofile />
-                </Route>
-                <Route exact path="/Studentdashboard">
-                    <Studentdashboard />
-                </Route>
-                <Route exact path="/TeacherSchool">
-                    <TeacherSchool />
-                </Route>
-                <Route exact path="/Signupwithaccount">
-                    <Signupwithaccount />
-                </Route>
-                <Route exact path="/Signinwithaccount">
-                    <Signinwithaccount />
-                </Route>
-                <Route exact path="/Activityteacher">
-                    <Activityteacher />
-                </Route>
+          <Route exact path="/Testpages">
+            <Testpages />
+          </Route>
 
-                <Route exact path="/Changeimage">
-                    <Changeimage />
-                </Route>
-                <Route exact path="/Studentuserlist">
-                    <Studentuserlist />
-                </Route>
-                <Route exact path="/Paymentpaid">
-                    <Paymentpaid />
-                </Route>
-                <Route exact path="/Resulttransaction">
-                    <Resulttransaction />
-                </Route>
-                <Route exact path="/Termsandconditions">
-                    <Termsandconditions />
-                </Route>
+          <Route
+            exact
+            path="/Addnewstudent/:id"
+            component={Addnewstudent}
+          ></Route>
+          <Route
+            exact
+            path="/Viewresultteacher/:id/:ids"
+            component={Viewresultteacher}
+          ></Route>
+          <Route
+            exact
+            path="/Viewsingleresult/:id/:ids/:idss"
+            component={Viewsingleresult}
+          ></Route>
 
-                <Route exact path="/Courseversion/:id" component={Courseversion}>
-                </Route>
+          <Route exact path="/Listofexams">
+            <Listofexams />
+          </Route>
 
+          <Route exact path="/Addnewexam">
+            <Addnewexam />
+          </Route>
+          <Route exact path="/Classsetup">
+            <Classsetup />
+          </Route>
+          <Route exact path="/Classsetuplist">
+            <Classsetuplist />
+          </Route>
 
-                <Route exact path="/Starttoprocesscourse/:id" component={Starttoprocesscourse}>
-                </Route>
+          <Route exact path="/Userlist">
+            <Userlist />
+          </Route>
+          <Route exact path="/Userssetup">
+            <Userssetup />
+          </Route>
+          <Route exact path="/Schoolcollegelist">
+            <Schoolcollegelist />
+          </Route>
+          <Route exact path="/Subjectsetup">
+            <Subjectsetup />
+          </Route>
+          <Route exact path="/Subjectsetuplist">
+            <Subjectsetuplist />
+          </Route>
 
-                <Route exact path="/Coursedetailspage/:version/:classnames/:singleclass/:groupname" component={Coursedetailspage}>
-                </Route>
-                <Route exact path="/Viewcart/:version/:classnames/:singleclass/:packageid" component={Viewcart}>
-                </Route>
-                <Route exact path="/Addnewstudentedit/:id" component={Addnewstudentedit}>
-                </Route>
+          <Route exact path="/Quizsetup/:id/:ids" component={Quizsetup}></Route>
+          <Route
+            exact
+            path="/Quizsetuplist/:id/:ids"
+            component={Quizsetuplist}
+          ></Route>
+          <Route
+            exact
+            path="/Examquestionlist/:id"
+            component={Examquestionlist}
+          ></Route>
+          <Route
+            exact
+            path="/Editaddnewexam/:id"
+            component={Editaddnewexam}
+          ></Route>
+          <Route
+            exact
+            path="/Edituserssetup/:id"
+            component={Edituserssetup}
+          ></Route>
+          <Route
+            exact
+            path="/Changepassword/:id"
+            component={Changepassword}
+          ></Route>
+          <Route exact path="/EditSchool/:id" component={EditSchool}></Route>
+          <Route
+            exact
+            path="/Fillgapedit/:id/:ids/:idss"
+            component={Fillgapedit}
+          ></Route>
+          <Route
+            exact
+            path="/Writtingtestedit/:id/:ids/:idss"
+            component={Writtingtestedit}
+          ></Route>
 
-                <Route exact path="/Bkapprove/:id" component={Bkapprove}>
-                </Route>
-                <Route exact path="/Readmore/:id" component={Readmore}>
-                </Route>
+          <Route
+            exact
+            path="/Mcqedit/:id/:ids/:idss"
+            component={Mcqedit}
+          ></Route>
 
+          <Route
+            exact
+            path="/Matchsetupedit/:id/:ids/:idss"
+            component={Matchsetupedit}
+          ></Route>
 
-                <Route exact path="/Viewquestiondetails/:id/:ids" component={Viewquestiondetails}>
-                </Route>
+          <Route
+            exact
+            path="/Quizsetuptwo/:id/:ids/:idss"
+            component={Quizsetuptwo}
+          ></Route>
 
-
-                <Route exact path="/Subjectfilterlist/:id/:ids/:idss"
-                    component={Subjectfilterlist}>
-                </Route>
-
-                <Route exact path="/Studentfindsubject/:id/:ids/:idss"
-                    component={Studentfindsubject}>
-                </Route>
-
-                <Route exact path="/Coursedetails/:id/:ids" component={Coursedetails}>
-                </Route>
-
-
-
-                <Route exact path="/Starttype/:id" component={Starttype}>
-                </Route>
-                <Route exact path="/Subjectpage/:id" component={Subjectpage}>
-                </Route>
-                <Route exact path="/Exampage/:id/:ids" component={Exampage}>
-                </Route>
-                <Route exact path="/Startquiz/:id" component={Startquiz}>
-                </Route>
-                <Route exact path="/Questiondetails/:id/:ids" component={Questiondetails}>
-                </Route>
-                <Route exact path="/Approve/:id" component={Approve}>
-                </Route>
-                <Route exact path="/Startquiztwo/:id/:ids/:idss" component={Startquiztwo}>
-                </Route>
-                <Route exact path="/Startquizsaveexits/:id/:serial/:totalquiz" component={Startquizsaveexits}>
-                </Route>
-                <Route exact path="/Resultpage/:id" component={Resultpage}>
-                </Route>
-                <Route exact path="/Resultpageviewhistory/:id" component={Resultpageviewhistory}>
-                </Route>
-                <Route exact path="/Viewsingleresultmath" component={Viewsingleresultmath}>
-                    <Viewsingleresultmath />
-                </Route>
-                <Route exact path="/Viewteachermarkingimage/:id/:ids" component={Viewteachermarkingimage}>
-                </Route>
-                <Route exact path="/Markingwrittingexam/:id/:ids/:idss/:idsss" component={Markingwrittingexam}>
-                </Route>
-                <Route exact path="/Addexamimage/:id" component={Addexamimage}>
-                </Route>
-
-                <Route exact path="/Easytoacton">
-                    <Easytoacton />
-                </Route>
-
-                <Route exact path="/Schoolcollegesetup">
-                    <Schoolcollegesetup />
-                </Route>
-                <Route exact path="/Examsetuplist">
-                    <Examsetuplist />
-                </Route>
-                <Route exact path="/Groupsetuplist">
-                    <Groupsetuplist />
-                </Route>
-                <Route exact path="/Groupsetup">
-                    <Groupsetup />
-                </Route>
-                <Route exact path="/Sectionsetup">
-                    <Sectionsetup />
-                </Route>
-                <Route exact path="/Sectionsetuplist">
-                    <Sectionsetuplist />
-                </Route>
-                <Route exact path="/Forgetpassword">
-                    <Forgetpassword />
-                </Route>
-
-                <Route exact path="/Testpages">
-                    <Testpages />
-                </Route>
-
-                <Route exact path="/Addnewstudent/:id" component={Addnewstudent}>
-                </Route>
-                <Route exact path="/Viewresultteacher/:id/:ids" component={Viewresultteacher}>
-                </Route>
-                <Route exact path="/Viewsingleresult/:id/:ids/:idss" component={Viewsingleresult}>
-                </Route>
-            
-
-                <Route exact path="/Listofexams">
-                    <Listofexams />
-                </Route>
-
-                <Route exact path="/Addnewexam">
-                    <Addnewexam />
-                </Route>
-                <Route exact path="/Classsetup">
-                    <Classsetup />
-                </Route>
-                <Route exact path="/Classsetuplist">
-                    <Classsetuplist />
-                </Route>
-
-                <Route exact path="/Userlist">
-                    <Userlist />
-                </Route>
-                <Route exact path="/Userssetup">
-                    <Userssetup />
-                </Route>
-                <Route exact path="/Schoolcollegelist">
-                    <Schoolcollegelist />
-                </Route>
-                <Route exact path="/Subjectsetup">
-                    <Subjectsetup />
-                </Route>
-                <Route exact path="/Subjectsetuplist">
-                    <Subjectsetuplist />
-                </Route>
-
-                <Route exact path="/Quizsetup/:id/:ids" component={Quizsetup}>
-                </Route>
-                <Route exact path="/Quizsetuplist/:id/:ids" component={Quizsetuplist}>
-                </Route>
-                <Route exact path="/Examquestionlist/:id" component={Examquestionlist}>
-                </Route>
-                <Route exact path="/Editaddnewexam/:id" component={Editaddnewexam}>
-                </Route>
-                <Route exact path="/Edituserssetup/:id" component={Edituserssetup}>
-                </Route>
-                <Route exact path="/Changepassword/:id" component={Changepassword}>
-                </Route>
-                <Route exact path="/EditSchool/:id" component={EditSchool}>
-                </Route>
-                <Route exact path="/Fillgapedit/:id/:ids/:idss" component={Fillgapedit}>
-                </Route>
-                <Route exact path="/Writtingtestedit/:id/:ids/:idss" component={Writtingtestedit}>
-                </Route>
-
-                <Route exact path="/Mcqedit/:id/:ids/:idss" component={Mcqedit}>
-                </Route>
-
-                <Route exact path="/Matchsetupedit/:id/:ids/:idss" component={Matchsetupedit}>
-                </Route>
-
-                <Route exact path="/Quizsetuptwo/:id/:ids/:idss" component={Quizsetuptwo}>
-                </Route>
-
-                <Route exact path="/Matchsetup/:id/:ids/:idss" component={Matchsetup}>
-                </Route>
-                <Route exact path="/Writtingtest/:id/:ids/:idss" component={Writtingtest}>
-                </Route>
-                <Route exact path="/Fillinthegap/:id/:ids/:idss" component={Fillinthegap}>
-                </Route>
-                <Route exact path="/Editsubjectsetup/:id" component={Editsubjectsetup}>
-                </Route>
-                <Route exact path="/registration">
-                    <Registration />
-                </Route>
-                <Route exact path="/Dashboard">
-                    <Dashboard />
-                </Route>
-                <Route exact path="/Continuewithemail">
-                    <Continuewithemail />
-                </Route>
-                <Route exact path="/Login">
-                    <Login />
-                </Route>
-            </Switch>
-        </Router>
-    );
+          <Route
+            exact
+            path="/Matchsetup/:id/:ids/:idss"
+            component={Matchsetup}
+          ></Route>
+          <Route
+            exact
+            path="/Writtingtest/:id/:ids/:idss"
+            component={Writtingtest}
+          ></Route>
+          <Route
+            exact
+            path="/Fillinthegap/:id/:ids/:idss"
+            component={Fillinthegap}
+          ></Route>
+          <Route
+            exact
+            path="/Editsubjectsetup/:id"
+            component={Editsubjectsetup}
+          ></Route>
+          <Route exact path="/registration">
+            <Registration />
+          </Route>
+          <Route exact path="/Dashboard">
+            <Dashboard />
+          </Route>
+          <Route exact path="/Continuewithemail">
+            <Continuewithemail />
+          </Route>
+          <Route exact path="/Login">
+            <Login />
+          </Route>
+        </Switch>
+      </Router>
+    </AppProvider>
+  )
 }
 
-export default App;
+export default App

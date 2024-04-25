@@ -58,9 +58,9 @@ useEffect(() => {
 
 
            <Card.Body>
-                    <h3>Your Request has been submitted we will get back to soon</h3>
-                    <p>Mobile No for call : 89798789</p>
-                    <p><Link to="/Studentdashboard">Start to Check Your Course</Link></p>
+              <h3>Your Request has been submitted we will get back to soon</h3>
+              <p>Mobile No for call : 89798789</p>
+              <p><Link to="/Studentdashboard">Start to Check Your Course</Link></p>
            </Card.Body>
          </Card> 
          </Link>

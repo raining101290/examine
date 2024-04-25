@@ -30,9 +30,10 @@ const Studentheader = () => {
   },[]);
 
   const flogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("studentid");
-    localStorage.removeItem("userrole");
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("studentid");
+    // localStorage.removeItem("userrole");
+    window.localStorage.clear();
     history.push('/');
   }
   //https://mui.com/material-ui/react-menu/

@@ -12,6 +12,7 @@ import axios from 'axios';
 import ActivityIndicator from 'react-activity-indicator'
 //npm install react-activity-indicator
 import 'react-activity-indicator/src/activityindicator.css'
+// import { direction } from 'html2canvas/dist/types/css/property-descriptors/direction';
 
 
 export class Remaningquestion extends Component {
@@ -76,26 +77,25 @@ export class Remaningquestion extends Component {
         return (
             
             <div>
-                          <div style={{ display: 'flex', color: '#000', justifyContent: 'space-between',
-                          height: 40, borderRadius: 20 }}>
+                <div style={{ display: 'flex', flexDirection:'column', color: '#000',
+                    borderRadius: 20 }}>
+                    {
+                        this.state.playcount ===  this.state.questioncount ?
+                        <div style={{ fontSize: 12 }}>Exam Completed</div> :
+                    
+                        <div style={{ fontSize: 12 }}>
                             {
-                                this.state.playcount ==  this.state.questioncount ?
-                                <div style={{ fontSize: 12 }}>Exam Completed</div>
-                                :
-                                <div style={{ fontSize: 12 }}>
-                                    {
-                                        this.state.playcount > 0 ?
-                                        <div>{this.state.playcount} Q. Left</div>
-                                        :
-                                        ''
-                                    }
-                                    
+                                <div>
+                                    <div>Answered: {this.state.playcount}</div> 
+                                    <div>Question Left: {remaning}</div>
                                 </div>
-                               
                             }
-                                    
-                                    <div style={{ fontSize: 12 }}> Q : {this.state.questioncount}   </div>                     
-                          </div>
+                        </div>
+                    }
+                    <div style={{ fontSize: 12 }}> 
+                        <div>Total Question : {this.state.questioncount}</div>   
+                    </div>                     
+                </div>
                      
             </div>
         );

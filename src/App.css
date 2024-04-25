@@ -46,7 +46,6 @@ ul {
 }
 
 ul.pagination li {
-
   width: 30px;
   border: 1px solid #e2e2e2;
   display: flex;
@@ -83,4 +82,28 @@ ul.pagination li a.active {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+}
+.success {
+  color: #49ad64;
+}
+.failed {
+  color: #cc2121;
+}
+.paddt30 {
+  padding: 40px 20px;
+}
+.paddt30 p {
+  font-size: 18px;
+}
+.payment-icon {
+  padding: 30px 0px;
+}
+.marginTop100 {
+  margin-top: 100px;
+}
+.marginTop115 {
+  margin-top: 115px;
+}
+.marginTop140 {
+  margin-top: 140px;
 }

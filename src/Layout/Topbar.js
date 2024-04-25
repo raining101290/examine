@@ -11,6 +11,7 @@ const Topbar = () => {
     const token = localStorage.removeItem("token");
     const emailaddress = localStorage.removeItem("emailaddress");
     const vendoremailaddress = localStorage.removeItem("vendoremailaddress");
+    localStorage.clear();
     history.push('/');
   }
     return (

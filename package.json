@@ -40,6 +40,7 @@
     "infinite-react-carousel": "^1.2.11",
     "json-groupby": "^1.1.0",
     "material-ui-phone-number": "^3.0.0",
+    "moment": "^2.30.1",
     "n-krypta": "^1.0.6",
     "react": "^18.2.0",
     "react-activity-indicator": "^0.7.77",
@@ -86,13 +87,16 @@
     "swiper": "^9.2.0",
     "timeago-react": "^3.0.4",
     "ui-percentage-bar": "^0.0.1",
+    "uuidv4": "^6.2.13",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write 'src/**/*.{js,jsx,json,css,scss,md}'",
+    "format-check": "prettier --check 'src/**/*.{js,jsx,json,css,scss,md}'"
   },
   "eslintConfig": {
     "extends": [
@@ -111,5 +115,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
   }
 }
