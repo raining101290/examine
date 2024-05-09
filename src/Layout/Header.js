@@ -1,26 +1,16 @@
-import React, { Component, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { Redirect } from 'react-router'
-import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Toast from 'react-bootstrap/Toast'
-import Spinner from 'react-bootstrap/Spinner'
 import Container from 'react-bootstrap/Container'
 
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Carousel from 'react-bootstrap/Carousel'
 import { useHistory } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHistory,
   faHome,
-  faPlug,
   faPlus,
   faSearch,
   faUsers,
@@ -28,11 +18,6 @@ import {
 
 const Header = () => {
   const history = useHistory()
-  const [vendoremailaddress, setVendoremailaddress] = useState(
-    localStorage.getItem('vendoremailaddress'),
-  )
-  const [usersrole, setUsersrole] = useState(localStorage.getItem('usersrole'))
-
   const flogout = () => {
     //localStorage.removeItem("token");
     //localStorage.removeItem("vendoremailaddress");
@@ -54,7 +39,11 @@ const Header = () => {
         <Container fluid>
           <Navbar.Brand href="/Dashboard">
             {/* examamine */}
-            <img src="/images/logo.png" style={{ width: 78, height: 57 }} />
+            <img
+              alt=""
+              src="/images/logo.png"
+              style={{ width: 78, height: 57 }}
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" style={{ height: 38 }} />
           <Navbar.Collapse id="navbarScroll">
@@ -128,7 +117,7 @@ const Header = () => {
               ) : (
                 ''
               )}
-              {localStorage.getItem('usersrole') == 'Admin' ? '' : ''}
+              {localStorage.getItem('usersrole') === 'Admin' ? '' : ''}
             </Nav>
 
             <NavDropdown
@@ -139,7 +128,7 @@ const Header = () => {
               <NavDropdown.Item href="#">
                 <Link to="/Editprofilepage">Profile</Link>
               </NavDropdown.Item>
-              {localStorage.getItem('usersrole') == 'Super Admin' ? (
+              {localStorage.getItem('usersrole') === 'Super Admin' ? (
                 <div>
                   <NavDropdown.Item href="#">
                     <Link to="/Userlist">Userlist</Link>

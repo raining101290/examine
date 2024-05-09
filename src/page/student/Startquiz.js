@@ -59,22 +59,6 @@ const Startquiz = (props) => {
     }
     //eslint-disable-next-line
   }, [])
-  //return [playing, toggle];
-
-  // const handleChange = (checked) => {
-  //   if (count === '0') {
-  //     // alert('0')
-  //     setChecked(true)
-  //     setCount(1)
-  //     setPlaying(!playing)
-  //   } else {
-  //     setCount(0)
-  //     setChecked(false)
-  //     setPlaying(!playing)
-  //     // alert('1')
-  //   }
-  //   // alert(checked)
-  // }
 
   const postexaminrecent = () => {
     axios
@@ -115,7 +99,6 @@ const Startquiz = (props) => {
         },
       })
       .then((res) => {
-        console.log(res.data)
         setExamstatus(res.data[0].examstatus)
         setExamname(res.data[0].examname)
       })
@@ -192,13 +175,10 @@ const Startquiz = (props) => {
         },
       })
       .then((res) => {
-        console.log('totalquiz' + res.data)
-
         if (res.data.length > 0) {
           setTotalquiz(res.data.length)
-          console.log('total quiz' + res.data.length)
-          //////////////////////////////////////////////////////////////////////
         } else {
+          setTotalquiz([])
         }
       })
   }
@@ -261,7 +241,7 @@ const Startquiz = (props) => {
    
    
   }) */
-
+  console.log('users::', users.length)
   return (
     <div className="startquiz">
       <Container>
@@ -278,12 +258,145 @@ const Startquiz = (props) => {
           </Col>
         </Row>
         <Row style={{ backgroundColor: '#000000', padding: 20 }}>
-          <Col sm={12}></Col>
-          {users.map((result) => {
-            //if (result.status === 'Active') {
-            return (
+          {users.length > 1
+            ? users.map((result) => {
+                if (result.status === 'Recentactivity') {
+                  return (
+                    <>
+                      <Col sm={4}>
+                        <Card
+                          className="carddiv"
+                          style={{
+                            borderWidth: 1,
+                            borderColor: '#212121',
+                            backgroundColor: '#212121',
+                          }}
+                        >
+                          <Examimage data={result.examid} />
+                          <Card.Body className="carddiv">
+                            <Card.Title style={{ color: '#ffffff' }}>
+                              {' '}
+                              {examname} {result.examname}
+                            </Card.Title>
+                            <Link to={'/Startquiztwo/' + result.examid}> </Link>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                      <Col sm={4}>
+                        <div className="playbuttondiv">
+                          {totalquiz < playcount ? (
+                            <p style={{ color: '#ffffff', padding: 10 }}>
+                              You already Played{' '}
+                            </p>
+                          ) : (
+                            <div>
+                              {examstatus === 'Draft' ? (
+                                <p style={{ color: '#ffffff', padding: 10 }}>
+                                  Teacher will publish exam soon
+                                </p>
+                              ) : (
+                                <Link
+                                  to={
+                                    '/Startquiztwo/' +
+                                    result.examid +
+                                    '/' +
+                                    totalquiz +
+                                    '/' +
+                                    playcount
+                                  }
+                                  style={{ textDecoration: 'none' }}
+                                >
+                                  <button
+                                    class="primarybutton"
+                                    data-v-dd58280e=""
+                                  >
+                                    <i
+                                      class="play-icon icon-fas-play"
+                                      data-v-dd58280e=""
+                                    ></i>{' '}
+                                    Start{' '}
+                                  </button>
+                                </Link>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      </Col>
+                    </>
+                  )
+                } else {
+                  return null
+                }
+              })
+            : users.length === 1 &&
+              users.map((result) => {
+                return (
+                  <>
+                    <Col sm={4}>
+                      <Card
+                        className="carddiv"
+                        style={{
+                          borderWidth: 1,
+                          borderColor: '#212121',
+                          backgroundColor: '#212121',
+                        }}
+                      >
+                        <Examimage data={result.examid} />
+                        <Card.Body className="carddiv">
+                          <Card.Title style={{ color: '#ffffff' }}>
+                            {' '}
+                            {examname} {result.examname}
+                          </Card.Title>
+                          <Link to={'/Startquiztwo/' + result.examid}> </Link>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                    <Col sm={4}>
+                      <div className="playbuttondiv">
+                        {totalquiz < playcount ? (
+                          <p style={{ color: '#ffffff', padding: 10 }}>
+                            You already Played{' '}
+                          </p>
+                        ) : (
+                          <div>
+                            {examstatus === 'Draft' ? (
+                              <p style={{ color: '#ffffff', padding: 10 }}>
+                                Teacher will publish exam soon
+                              </p>
+                            ) : (
+                              <Link
+                                to={
+                                  '/Startquiztwo/' +
+                                  result.examid +
+                                  '/' +
+                                  totalquiz +
+                                  '/' +
+                                  playcount
+                                }
+                                style={{ textDecoration: 'none' }}
+                              >
+                                <button
+                                  class="primarybutton"
+                                  data-v-dd58280e=""
+                                >
+                                  <i
+                                    class="play-icon icon-fas-play"
+                                    data-v-dd58280e=""
+                                  ></i>{' '}
+                                  Start{' '}
+                                </button>
+                              </Link>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </Col>
+                  </>
+                )
+              })}
+          {users.length === 0 && (
+            <>
               <Col sm={4}>
-                {/*  <Link to={"/Startquiz/" + result.examid + '/' + totalquiz}> */}
                 <Card
                   className="carddiv"
                   style={{
@@ -292,29 +405,21 @@ const Startquiz = (props) => {
                     backgroundColor: '#212121',
                   }}
                 >
-                  {/*  <Card.Img variant="top" src="/images/exam.png" style={{ backgroundPosition: '50%' }} className='carddiv'/> */}
-                  <Examimage data={result.examid} />
+                  <Examimage data={examid} />
                   <Card.Body className="carddiv">
                     <Card.Title style={{ color: '#ffffff' }}>
                       {' '}
-                      {examname} {result.examname}
+                      {examname}
                     </Card.Title>
-                    <Link to={'/Startquiztwo/' + result.examid}> </Link>
+                    <Link to={'/Startquiztwo/' + examid}> </Link>
                   </Card.Body>
                 </Card>
-                {/*  </Link> */}
               </Col>
-            )
-            // }
-          })}
-          {users.map((result) => {
-            //if (result.status === 'Active') {
-            return (
               <Col sm={4}>
                 <div className="playbuttondiv">
                   {totalquiz < playcount ? (
                     <p style={{ color: '#ffffff', padding: 10 }}>
-                      You already Played
+                      You already Played{' '}
                     </p>
                   ) : (
                     <div>
@@ -326,7 +431,7 @@ const Startquiz = (props) => {
                         <Link
                           to={
                             '/Startquiztwo/' +
-                            result.examid +
+                            examid +
                             '/' +
                             totalquiz +
                             '/' +
@@ -339,34 +444,16 @@ const Startquiz = (props) => {
                               class="play-icon icon-fas-play"
                               data-v-dd58280e=""
                             ></i>{' '}
-                            Start
+                            Start{' '}
                           </button>
                         </Link>
                       )}
                     </div>
                   )}
                 </div>
-                {/*   <div className='playsetting'>
-                  <p style={{ color: '#ffffff' }}>Setting</p>
-                </div>
-                <div className='playbuttondiv' style={{ display: 'flex', justifyContent: 'space-between', padding: 10 }}>
-                  <p>
-                    <FontAwesomeIcon icon={faMusic} style={{ color: '#ffffff', padding: 15 }}></FontAwesomeIcon>
-                  </p>
-                  <p style={{ color: '#ffffff', padding: 12 }}>
-                    Setup Music 
-                  </p>
-                  <p>
-                    <div className='btn'
-                      style={{ color: '#ffffff', padding: 12 }}>
-                      <Switch onChange={handleChange} checked={checked} />
-                    </div>
-                  </p>
-                </div> */}
               </Col>
-            )
-            // }
-          })}
+            </>
+          )}
         </Row>
       </Container>
     </div>

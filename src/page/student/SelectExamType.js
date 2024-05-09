@@ -49,6 +49,7 @@ const SelectExamType = () => {
     if (examTypes.length === 0) {
       fnExamTypes()
     }
+    window.scrollTo(0, 0)
     //eslint-disable-next-line
   }, [])
 
@@ -90,7 +91,6 @@ const SelectExamType = () => {
         group: getGroupname(),
       })
         .then((res) => {
-          console.log('res.data', res?.data)
           //set package info in the context for later use
           localStorage.setItem('packageid', res?.data?.packageid)
           localStorage.setItem('packagename', res?.data?.packagename)

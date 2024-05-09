@@ -90,7 +90,7 @@ import Viewquestiondetails from './page/Viewquestiondetails'
 import Admissiontestpayment from './page/student/Admissiontestpayment'
 import Bkconfirmlists from './page/Bkconfirmlists'
 import Bkapprove from './page/Bkapprove'
-import Paymentpaid from './page/student/Paymentpaid'
+//import Paymentpaid from './page/student/Paymentpaid'
 import Starttoprocesscourse from './page/student/Starttoprocesscourse'
 import Markingwrittingexam from './page/Markingwrittingexam'
 import Resulttransaction from './page/student/Resulttransaction'
@@ -242,9 +242,9 @@ function App() {
           <Route exact path="/Studentuserlist">
             <Studentuserlist />
           </Route>
-          <Route exact path="/Paymentpaid">
+          {/* <Route exact path="/Paymentpaid">
             <Paymentpaid />
-          </Route>
+          </Route> */}
           <Route exact path="/Resulttransaction">
             <Resulttransaction />
           </Route>

@@ -64,6 +64,13 @@ const Coachingdisplay = () => {
     <Container>
       <Box className="marginTop115">
         <Row>
+          <Col sm={12}>
+            <center>
+              Want more Subjects <Link to="/StudentDashboard">Go Home</Link>
+            </center>
+          </Col>
+        </Row>
+        <Row>
           {Object.entries(users).map(([dep, staff], index) => {
             return (
               <div key={index}>
@@ -93,7 +100,7 @@ const Coachingdisplay = () => {
                     return (
                       <Col xs={6} sm={2} key={slno}>
                         <Link
-                          to={'/Starttoprocesscourse/' + result._id}
+                          to={'/Startquiz/' + result._id}
                           style={{ textDecoration: 'none' }}
                         >
                           <Card style={{ marginBottom: 15 }}>
