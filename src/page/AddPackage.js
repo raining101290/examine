@@ -11,7 +11,7 @@ import { successToast, errorToast } from './library/toast'
 function AddPackage() {
   const [packagename, setPackagename] = useState('')
   const [classname, setClassname] = useState('')
-  const [version, setversion] = useState('Banglaa Version')
+  const [version, setversion] = useState('Bangla Version')
   const [group, setgroup] = useState('Science')
   const [price, setPrice] = useState(50)
   const [examTypes, setExamTypes] = useState([])

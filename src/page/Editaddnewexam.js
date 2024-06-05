@@ -18,7 +18,7 @@ import { getExamTypes } from '../axios/student/api'
 export class Editaddnewexam extends Component {
   constructor(props) {
     super(props)
-    this.createuser = this.createuser.bind(this)
+    this.updateExam = this.updateExam.bind(this)
     this.handletype = this.handletype.bind(this)
     this.handleschoolcollagename = this.handleschoolcollagename.bind(this)
     this.handlestatus = this.handlestatus.bind(this)
@@ -63,6 +63,7 @@ export class Editaddnewexam extends Component {
       subjectlist: [],
       examtypes: [],
       quizType: '',
+      selectedQuizType: '',
       paymenttype: '',
       versionname: '',
       groupname: '',
@@ -80,9 +81,9 @@ export class Editaddnewexam extends Component {
     this.getsectiondata()
     // this.getgrouplist();
 
-    if (this.state.userrole == 'Admin') {
-    } else if (this.state.userrole == 'Super Admin') {
-    } else if (this.state.userrole == 'Teacher') {
+    if (this.state.userrole === 'Admin') {
+    } else if (this.state.userrole === 'Super Admin') {
+    } else if (this.state.userrole === 'Teacher') {
     }
   }
   //getsectiondata
@@ -115,7 +116,7 @@ export class Editaddnewexam extends Component {
 
   handleExamType = (event) => {
     const selectedValue = event.target.value
-    this.setState({ selectedQuizType: selectedValue })
+    this.setState({ quizType: selectedValue })
   }
 
   getgrouplist = () => {
@@ -269,25 +270,25 @@ export class Editaddnewexam extends Component {
     ///////////////////////////////
   }
 
-  createuser() {
+  updateExam() {
     //  alert(this.state.versionname)
     if (
-      this.state.examname == '' ||
-      localStorage.getItem('schoolcollegetype') == '' ||
-      this.state.examdate == '' ||
-      this.state.examtime == '' ||
-      this.state.schoolid == '' ||
-      this.state.schoolname == '' ||
-      this.state.groupname == '' ||
-      this.state.sectionname == '' ||
-      this.state.examfees == '' ||
-      this.state.noofstudent == '' ||
-      this.state.examstatus == '' ||
-      this.state.autoid == '' ||
-      this.state.subjectname == '' ||
-      this.state.paymenttype == '' ||
-      this.state.versionname == '' ||
-      this.state.chapter == ''
+      this.state.examname === '' ||
+      localStorage.getItem('schoolcollegetype') === '' ||
+      this.state.examdate === '' ||
+      this.state.examtime === '' ||
+      this.state.schoolid === '' ||
+      this.state.schoolname === '' ||
+      this.state.groupname === '' ||
+      this.state.sectionname === '' ||
+      this.state.examfees === '' ||
+      this.state.noofstudent === '' ||
+      this.state.examstatus === '' ||
+      this.state.autoid === '' ||
+      this.state.subjectname === '' ||
+      this.state.paymenttype === '' ||
+      this.state.versionname === '' ||
+      this.state.chapter === ''
     ) {
       alert('Insert the required Fields')
     } else {
@@ -297,8 +298,8 @@ export class Editaddnewexam extends Component {
         autoid: this.state.autoid,
         examname: this.state.examname,
         chapter: this.state.chapter,
-        examtype: localStorage.getItem('schoolcollegetype'),
-        quizType: this.state.selectedQuizType,
+        examtype: this.state.schoolcollegetype,
+        quizType: this.state.quizType,
         examdate: this.state.examdate,
         examtime: this.state.examtime,
         schoolcollegid: this.state.schoolid,
@@ -316,7 +317,7 @@ export class Editaddnewexam extends Component {
         version: this.state.version,
         status: 'Active',
       }
-      console.log('postObject', postObject)
+      //console.log('postObject', postObject)
       axios
         .post(base.BASE_URL + '/updateexams', postObject, {
           headers: {
@@ -352,7 +353,7 @@ export class Editaddnewexam extends Component {
 
   render() {
     // alert(this.state.loggdin);
-    if (this.state.loggdin == 'start') {
+    if (this.state.loggdin === 'start') {
       return <Redirect to="/Examsetuplist" />
     }
 
@@ -737,7 +738,7 @@ export class Editaddnewexam extends Component {
                                 type="button"
                                 className="btn btn-primary btn-user btn-block"
                                 style={{ marginTop: 20 }}
-                                onClick={this.createuser}
+                                onClick={this.updateExam}
                               >
                                 {this.state.loading ? (
                                   <Spinner

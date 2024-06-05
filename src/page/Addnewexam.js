@@ -12,6 +12,7 @@ import Header from '../Layout/Header'
 import 'react-activity-indicator/src/activityindicator.css'
 import Container from 'react-bootstrap/Container'
 import { getExamTypes } from '../axios/student/api'
+import { classes, groups, versions } from '../utils/constants'
 
 export class Addnewexam extends Component {
   constructor() {
@@ -46,9 +47,9 @@ export class Addnewexam extends Component {
       loggdin: 'stop',
       counter: 0,
       schoolcollegelist: [],
-      classlist: [],
+      classlist: classes,
       sectionlist: [],
-      grouplist: [],
+      grouplist: groups,
       subjectlist: [],
       examstatus: 'Draft',
       schoolid: localStorage.getItem('schoolid'),
@@ -365,10 +366,8 @@ export class Addnewexam extends Component {
                             >
                               {localStorage.getItem('schoolcollegetype')}
                             </option>
-                            {/*  <option value="School">School</option>
-                                                        <option value="College">College</option>
-                                                        <option value="Admission Test">Admission Test</option>
-                                                        <option value="Job Interview">Job Interview</option> */}
+                            <option value="School">School</option>
+                            <option value="College">College</option>
                           </select>
                           <span style={{ color: 'red', fontSize: 12 }}>
                             {this.state.errors['inistute']}
@@ -425,11 +424,11 @@ export class Addnewexam extends Component {
                             className="combox"
                             onChange={this.handleclassname}
                           >
-                            <option value=""></option>
+                            <option value="">Select Class</option>
                             {this.state.classlist.map((result) => {
                               return (
-                                <option value={result.xclassname}>
-                                  {result.xclassname}
+                                <option value={result.id}>
+                                  {result.title}
                                 </option>
                               )
                             })}
@@ -493,19 +492,14 @@ export class Addnewexam extends Component {
                             }}
                             onChange={this.handlegroupname}
                           >
-                            <option value=""></option>
-                            <option value="General">General</option>
-                            <option value="Arts">Arts</option>
-                            <option value="Commerce">Commerce</option>
-                            <option value="Science">Science</option>
-                            {/*   {
-                                                            this.state.grouplist.map((result) => {
-                                                                return (
-                                                                    <option value={result.xgroupname}>
-                                                                        {result.xgroupname}
-                                                                    </option>
-                                                                )
-                                                            })} */}
+                            <option value="">Select</option>
+                            {this.state.grouplist.map((result) => {
+                              return (
+                                <option value={result.id}>
+                                  {result.title}
+                                </option>
+                              )
+                            })}
                           </select>
                         </div>
                         <div
@@ -522,9 +516,7 @@ export class Addnewexam extends Component {
                             }}
                             onChange={this.handleversion}
                           >
-                            <option value={this.state.versionname}>
-                              {this.state.versionname}
-                            </option>
+                            <option value="">Select Version</option>
                             <option value="English Version">
                               English Version
                             </option>
