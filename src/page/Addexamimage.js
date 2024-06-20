@@ -2,22 +2,20 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router'
 //import useForm from 'react-hook-form'
-import { Button, Form, Label } from 'reactstrap'
+import { Label } from 'reactstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Spinner } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+// import Row from 'react-bootstrap/Row'
+// import Col from 'react-bootstrap/Col'
 import * as base from './global'
 import axios from 'axios'
 import Header from '../Layout/Header'
 import Footer from './Footer'
-import Topbar from '../Layout/Topbar'
-import ActivityIndicator from 'react-activity-indicator'
 //npm install react-activity-indicator
 import 'react-activity-indicator/src/activityindicator.css'
-import { PowerInputSharp } from '@material-ui/icons'
+// import { PowerInputSharp } from '@material-ui/icons'
 
 export class Addexamimage extends Component {
   constructor(props) {
@@ -55,32 +53,23 @@ export class Addexamimage extends Component {
       ////////////////////////////////////////
       // this.setState({ questionAimage: event.target.files[0],  questionimageupload_loader: true })
       //   setQuestionAimage(event.target.files[0]);
-      console.log(event.target.files[0])
       // image preview
       var file = event.target.files[0]
       var reader = new FileReader()
       var url = reader.readAsDataURL(file)
-
-      reader.onloadend = function (e) {
-        /*    this.setState({
-                       previewA: [reader.result]
-                   }) */
-        // setPreviewA([reader.result])
-      }.bind(this)
-      console.log(url) // Would see a path?
+      console.log('filesUrl::', url) // Would see a path?
       // end image previou
       //////////upload
       const fd = new FormData()
       fd.append('profileImg', event.target.files[0], event.target.files[0].name)
       fd.append('autoincrement', this.state.autoid)
-
       axios.post(base.BASE_URL + '/examimageupdate', fd).then((res) => {
         // alert(res.message);
-        if (res.status === '200') {
+        if (res.status === 200) {
           this.setState({
             loading: false,
           })
-          alert('Update Successfully')
+          alert('Updated Successfully')
           //this.setState({ questionimageupload_loader: false })
         } else {
           this.setState({
@@ -104,7 +93,7 @@ export class Addexamimage extends Component {
 
   render() {
     // alert(this.state.loggdin);
-    if (this.state.loggdin == 'start') {
+    if (this.state.loggdin === 'start') {
       return <Redirect to="/Examsetuplist" />
     }
     return (

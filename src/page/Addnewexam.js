@@ -12,7 +12,7 @@ import Header from '../Layout/Header'
 import 'react-activity-indicator/src/activityindicator.css'
 import Container from 'react-bootstrap/Container'
 import { getExamTypes } from '../axios/student/api'
-import { classes, groups, versions } from '../utils/constants'
+import { classes, groups } from '../utils/constants'
 
 export class Addnewexam extends Component {
   constructor() {
@@ -68,14 +68,16 @@ export class Addnewexam extends Component {
   componentDidMount() {
     this.fnExamTypes()
     if (this.state.userrole === 'Admin') {
+      //
     } else if (this.state.userrole === 'Super Admin') {
+      //
     } else if (this.state.userrole === 'Teacher') {
       // console.log(base.BASE_URL + '/getclassid/' + this.state.schoolid)
-      axios
-        .get(base.BASE_URL + '/getclassid/' + this.state.schoolid)
-        .then((result) => {
-          this.setState({ classlist: result.data })
-        })
+      // axios
+      //   .get(base.BASE_URL + '/getclassid/' + this.state.schoolid)
+      //   .then((result) => {
+      //     this.setState({ classlist: result.data })
+      //   })
 
       axios
         .get(base.BASE_URL + '/getsectionid/' + this.state.schoolid)
@@ -88,13 +90,13 @@ export class Addnewexam extends Component {
           } else {
           }
         })
-      console.log(base.BASE_URL + '/grouplist/' + this.state.schoolid)
-      axios
-        .get(base.BASE_URL + '/grouplist/' + this.state.schoolid)
-        .then((result) => {
-          this.setState({ grouplist: result.data })
-        })
-      console.log(base.BASE_URL + '/subjectlistschool/' + this.state.schoolid)
+
+      // axios
+      //   .get(base.BASE_URL + '/grouplist/' + this.state.schoolid)
+      //   .then((result) => {
+      //     this.setState({ grouplist: result.data })
+      //   })
+
       axios
         .get(base.BASE_URL + '/subjectlistschool/' + this.state.schoolid)
         .then((result) => {
@@ -264,7 +266,7 @@ export class Addnewexam extends Component {
         chapter: this.state.chapter,
         status: 'Active',
       }
-      console.log('postObj', postObj)
+      //console.log('postObj', postObj)
       axios
         .post(base.BASE_URL + '/addnewexam', postObj, {
           headers: {

@@ -285,9 +285,33 @@ const Startquiz = (props) => {
                       <Col sm={4}>
                         <div className="playbuttondiv">
                           {totalquiz < playcount ? (
-                            <p style={{ color: '#ffffff', padding: 10 }}>
-                              You already Played{' '}
-                            </p>
+                            <>
+                              <p style={{ color: '#ffffff', padding: 10 }}>
+                                You already Played{' '}
+                              </p>
+                              <Link
+                                to={
+                                  '/Startquiztwo/' +
+                                  result.examid +
+                                  '/' +
+                                  totalquiz +
+                                  '/' +
+                                  playcount
+                                }
+                                style={{ textDecoration: 'none' }}
+                              >
+                                <button
+                                  class="primarybutton"
+                                  data-v-dd58280e=""
+                                >
+                                  <i
+                                    class="play-icon icon-fas-play"
+                                    data-v-dd58280e=""
+                                  ></i>{' '}
+                                  Play Again
+                                </button>
+                              </Link>
+                            </>
                           ) : (
                             <div>
                               {examstatus === 'Draft' ? (
@@ -354,9 +378,30 @@ const Startquiz = (props) => {
                     <Col sm={4}>
                       <div className="playbuttondiv">
                         {totalquiz < playcount ? (
-                          <p style={{ color: '#ffffff', padding: 10 }}>
-                            You already Played{' '}
-                          </p>
+                          <>
+                            <p style={{ color: '#ffffff', padding: 10 }}>
+                              You already Played{' '}
+                            </p>
+                            <Link
+                              to={
+                                '/Startquiztwo/' +
+                                result.examid +
+                                '/' +
+                                totalquiz +
+                                '/' +
+                                1
+                              }
+                              style={{ textDecoration: 'none' }}
+                            >
+                              <button class="primarybutton" data-v-dd58280e="">
+                                <i
+                                  class="play-icon icon-fas-play"
+                                  data-v-dd58280e=""
+                                ></i>{' '}
+                                Play Again
+                              </button>
+                            </Link>
+                          </>
                         ) : (
                           <div>
                             {examstatus === 'Draft' ? (
@@ -418,9 +463,11 @@ const Startquiz = (props) => {
               <Col sm={4}>
                 <div className="playbuttondiv">
                   {totalquiz < playcount ? (
-                    <p style={{ color: '#ffffff', padding: 10 }}>
-                      You already Played{' '}
-                    </p>
+                    <>
+                      <p style={{ color: '#ffffff', padding: 10 }}>
+                        You already Played{' '}
+                      </p>
+                    </>
                   ) : (
                     <div>
                       {examstatus === 'Draft' ? (

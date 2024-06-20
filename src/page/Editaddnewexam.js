@@ -14,6 +14,7 @@ import Header from '../Layout/Header'
 import 'react-activity-indicator/src/activityindicator.css'
 import Container from 'react-bootstrap/Container'
 import { getExamTypes } from '../axios/student/api'
+import { classes, groups } from '../utils/constants'
 
 export class Editaddnewexam extends Component {
   constructor(props) {
@@ -50,9 +51,9 @@ export class Editaddnewexam extends Component {
       loggdin: 'stop',
       counter: 0,
       schoolcollegelist: [],
-      classlist: [],
+      classlist: classes,
       sectionlist: [],
-      grouplist: [],
+      grouplist: groups,
       examstatus: '',
       schoolid: localStorage.getItem('schoolid'),
       schoolcollegename: localStorage.getItem('schoolcollegename'),
@@ -75,7 +76,7 @@ export class Editaddnewexam extends Component {
     //  alert(this.state.schoolid)
     this.fnExamTypes()
     // alert(this.state.schoolid)
-    this.getclassdata()
+    //this.getclassdata()
     this.getexamdata()
     this.getsubjectdata()
     this.getsectiondata()
@@ -119,14 +120,14 @@ export class Editaddnewexam extends Component {
     this.setState({ quizType: selectedValue })
   }
 
-  getgrouplist = () => {
-    console.log(base.BASE_URL + '/grouplist/' + this.state.schoolid)
-    axios
-      .get(base.BASE_URL + '/grouplist/' + this.state.schoolid)
-      .then((result) => {
-        this.setState({ grouplist: result.data })
-      })
-  }
+  // getgrouplist = () => {
+  //   console.log(base.BASE_URL + '/grouplist/' + this.state.schoolid)
+  //   axios
+  //     .get(base.BASE_URL + '/grouplist/' + this.state.schoolid)
+  //     .then((result) => {
+  //       this.setState({ grouplist: result.data })
+  //     })
+  // }
   getexamdata = () => {
     axios
       .get(base.BASE_URL + '/geteditnewexams/' + this.state.autoid)
@@ -154,13 +155,13 @@ export class Editaddnewexam extends Component {
         console.log('monir' + res.data)
       })
   }
-  getclassdata = () => {
-    axios
-      .get(base.BASE_URL + '/getclassid/' + this.state.schoolid)
-      .then((result) => {
-        this.setState({ classlist: result.data })
-      })
-  }
+  // getclassdata = () => {
+  //   axios
+  //     .get(base.BASE_URL + '/getclassid/' + this.state.schoolid)
+  //     .then((result) => {
+  //       this.setState({ classlist: result.data })
+  //     })
+  // }
   getsubjectdata = () => {
     console.log(base.BASE_URL + '/subjectlistschool/' + this.state.schoolid)
     axios
@@ -485,8 +486,8 @@ export class Editaddnewexam extends Component {
                                 </option>
                                 {this.state.classlist.map((result) => {
                                   return (
-                                    <option value={result.xclassname}>
-                                      {result.xclassname}
+                                    <option value={result.id}>
+                                      {result.title}
                                     </option>
                                   )
                                 })}
@@ -550,23 +551,22 @@ export class Editaddnewexam extends Component {
                               <select
                                 className="combox"
                                 onChange={this.handlegroupname}
-                                onClick={this.getgrouplist}
+                                // onClick={this.getgrouplist}
                               >
                                 <option value={this.state.groupname}>
                                   {this.state.groupname}
                                 </option>
-                                <option value="General">General</option>
+                                {/* <option value="General">General</option>
                                 <option value="Arts">Arts</option>
                                 <option value="Commerce">Commerce</option>
-                                <option value="Science">Science</option>
-                                {/*                                                                         {
-                                                                        this.state.grouplist.map((result) => {
-                                                                        return (
-                                                                        <option value={result.xgroupname}>
-                                                                        {result.xgroupname}
-                                                                        </option>
-                                                                        )
-                                                                        })} */}
+                                <option value="Science">Science</option> */}
+                                {this.state.grouplist.map((result) => {
+                                  return (
+                                    <option value={result.id}>
+                                      {result.title}
+                                    </option>
+                                  )
+                                })}
                               </select>
                             </div>
                             <div
