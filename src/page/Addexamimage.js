@@ -1,21 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router'
-//import useForm from 'react-hook-form'
 import { Label } from 'reactstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Spinner } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
-// import Row from 'react-bootstrap/Row'
-// import Col from 'react-bootstrap/Col'
 import * as base from './global'
 import axios from 'axios'
 import Header from '../Layout/Header'
 import Footer from './Footer'
 //npm install react-activity-indicator
 import 'react-activity-indicator/src/activityindicator.css'
-// import { PowerInputSharp } from '@material-ui/icons'
 
 export class Addexamimage extends Component {
   constructor(props) {
