@@ -615,7 +615,7 @@ export class Addnewexam extends Component {
                             onChange={this.handleChange.bind(this, 'examfees')}
                             value={this.state.fields['examfees']}
                             readOnly={
-                              this.state.paymenttype == 'Free' ? true : false
+                              this.state.paymenttype === 'Free' ? true : false
                             }
                           />
                           <span style={{ color: 'red' }}>
