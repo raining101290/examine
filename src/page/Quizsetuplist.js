@@ -3,48 +3,35 @@ import React, { useEffect, useState } from 'react'
 //import { Redirect } from 'react-router';
 import Header from '../Layout/Header'
 import Footer from './Footer'
-import Topbar from '../Layout/Topbar'
-import { Redirect } from 'react-router'
 import * as base from './global'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import ReactDOM from 'react-dom'
-import { Button, Form } from 'reactstrap'
 import IconButton from '@material-ui/core/IconButton'
-import Snackbar from '@material-ui/core/Snackbar'
-import CloseIcon from '@material-ui/icons/Close'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Parser from 'html-react-parser' // render HTML
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faArrowRight,
-  faArrowRightArrowLeft,
-  faPlus,
-  faSearch,
-} from '@fortawesome/free-solid-svg-icons'
-import { faEdit, faDeleteLeft, fadel } from '@fortawesome/free-solid-svg-icons'
-import VisibilityIcon from '@mui/icons-material/Visibility'
-import VisibilityOff from '@material-ui/icons/VisibilityOff'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faDeleteLeft } from '@fortawesome/free-solid-svg-icons'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import Input from '@material-ui/core/Input'
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
-import { addStyles, EditableMathField, StaticMathField } from 'react-mathquill'
+import { StaticMathField } from 'react-mathquill'
 import { Facebook } from 'react-content-loader'
-import { MathJaxContext, MathJax } from 'better-react-mathjax'
+//import { MathJaxContext, MathJax } from 'better-react-mathjax'
 
 function Quizsetuplist(props) {
   const [state, setData] = useState({ users: [] })
-  const [email, setEmail] = useState(localStorage.getItem('vendoremailaddress'))
+  //const [email, setEmail] = useState(localStorage.getItem('vendoremailaddress'))
   const [schoolid, setSchoolid] = useState(localStorage.getItem('schoolid'))
   const [examid, setExamid] = useState(props.match.params.id)
   const [examname, setExamname] = useState(props.match.params.ids)
   const [isdelete, setIsdelete] = useState(false)
   const [isloading, setIsloading] = useState(false)
-  const [latex, setLatex] = useState('\\frac{1}{\\sqrt{2}}\\cdot 2')
+  //const [latex, setLatex] = useState('\\frac{1}{\\sqrt{2}}\\cdot 2')
   const [isOpenquestionimage, setIsOpenquestionimage] = useState(false)
 
   //   const [fromage, setFromage] = useState(props.match.params.frmid);
@@ -98,11 +85,11 @@ function Quizsetuplist(props) {
         .then(
           (response) => {
             // alert('kkk')
-            // if (response.data == "delete") {
+            // if (response.data === "delete") {
             datagrid()
             setIsdelete(false)
             //}
-            //else if (response.data == "notfound") {
+            //else if (response.data === "notfound") {
             setIsloading(false)
             //}
           },
@@ -177,7 +164,7 @@ function Quizsetuplist(props) {
                           {result.point}
                         </div>
                         <div style={{ display: 'flex' }}>
-                          {result.quiztype == 'MCQ' ? (
+                          {result.quiztype === 'MCQ' ? (
                             <Link
                               variant="info"
                               to={
@@ -198,7 +185,7 @@ function Quizsetuplist(props) {
                           ) : (
                             ''
                           )}
-                          {result.quiztype == 'Writting Test' ? (
+                          {result.quiztype === 'Writting Test' ? (
                             <Link
                               variant="info"
                               to={
@@ -219,7 +206,7 @@ function Quizsetuplist(props) {
                           ) : (
                             ''
                           )}
-                          {result.quiztype == 'Fill in the Gap' ? (
+                          {result.quiztype === 'Fill in the Gap' ? (
                             <Link
                               variant="info"
                               to={
@@ -240,7 +227,7 @@ function Quizsetuplist(props) {
                           ) : (
                             ''
                           )}
-                          {result.quiztype == 'Match' ? (
+                          {result.quiztype === 'Match' ? (
                             <Link
                               variant="info"
                               to={
@@ -289,7 +276,7 @@ function Quizsetuplist(props) {
                             <div className="mathall"></div>
                             <div className="mathall">
                               <table>
-                                {result.questiontype1 == 'Text' ? (
+                                {result.questiontype1 === 'Text' ? (
                                   <tr>
                                     <td>{result.questiontitle}</td>
                                   </tr>
@@ -303,7 +290,7 @@ function Quizsetuplist(props) {
                                   </tr>
                                 )}
 
-                                {result.questiontype2 == 'Text' ? (
+                                {result.questiontype2 === 'Text' ? (
                                   <tr>
                                     <td>{result.questiontitle2}</td>
                                   </tr>
@@ -316,7 +303,7 @@ function Quizsetuplist(props) {
                                     </td>
                                   </tr>
                                 )}
-                                {result.questiontype3 == 'Text' ? (
+                                {result.questiontype3 === 'Text' ? (
                                   <tr>
                                     <td>{result.questiontitle3} </td>
                                   </tr>
@@ -330,7 +317,7 @@ function Quizsetuplist(props) {
                                   </tr>
                                 )}
 
-                                {result.questiontype4 == 'Text' ? (
+                                {result.questiontype4 === 'Text' ? (
                                   <tr>
                                     <td> {result.questiontitle4} </td>
                                   </tr>
@@ -343,7 +330,7 @@ function Quizsetuplist(props) {
                                     </td>
                                   </tr>
                                 )}
-                                {result.questiontype5 == 'Text' ? (
+                                {result.questiontype5 === 'Text' ? (
                                   <tr>
                                     <td>{result.questiontitle5}</td>
                                   </tr>

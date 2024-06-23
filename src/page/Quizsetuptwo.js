@@ -2,31 +2,26 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router'
 //import useForm from 'react-hook-form'
-import { Button, Form } from 'reactstrap'
+import { Button } from 'reactstrap'
 import { Progress } from 'reactstrap'
 import * as base from './global'
 import axios from 'axios'
 import Header from '../Layout/Header'
-import Footer from '../Layout/Footer'
-import Topbar from '../Layout/Topbar'
-import ActivityIndicator from 'react-activity-indicator'
 //npm install react-activity-indicator
 import 'react-activity-indicator/src/activityindicator.css'
 import Alert from 'react-bootstrap/Alert'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import { Editor } from 'react-draft-wysiwyg' // this is for text area editor
-import { EditorState, convertFromRaw, convertToRaw } from 'draft-js'
+//import { Editor } from 'react-draft-wysiwyg' // this is for text area editor
+import { EditorState } from 'draft-js'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css' // this is for text area editor
-import { convertToHTML } from 'draft-convert'
+//import { convertToHTML } from 'draft-convert'
 import Modal from 'react-modal'
 /* npm install @material-ui/core
 npm install @material-ui/icons */
 //import ImageIcon from '@material-ui/icons/ImageIcon';
 import IconButton from '@material-ui/core/IconButton'
 import ImageIcon from '@mui/icons-material/Image'
-import { addStyles, EditableMathField, StaticMathField } from 'react-mathquill'
+import { EditableMathField } from 'react-mathquill'
 import Basic from './Basic'
 import Basictwo from './Basictwo'
 import Basicthree from './Basicthree'
@@ -37,7 +32,7 @@ import Basicseven from './Basicseven'
 import Basiceight from './Basiceight'
 import Basicnine from './Basicnine'
 
-import ReactQuill from 'react-quill'
+//import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 
 const customStyles = {
@@ -753,7 +748,7 @@ export class Quizsetuptwo extends Component {
   }
 
   fileSelectA = (event) => {
-    if (this.state.Atype == '' || this.state.automemberid == '') {
+    if (this.state.Atype === '' || this.state.automemberid === '') {
       alert('Insert the Question A Type')
     } else {
       ////////////////////////////////////////
@@ -781,7 +776,7 @@ export class Quizsetuptwo extends Component {
       fd.append('Atype', this.state.Atype)
       axios.post(base.BASE_URL + '/Aimageupload', fd).then((res) => {
         // alert(res.message);
-        if (res.status == '200') {
+        if (res.status === '200') {
           this.setState({ questionimageupload_loader: false })
         } else {
           this.setState({ questionimageupload_loader: false })
@@ -797,7 +792,7 @@ export class Quizsetuptwo extends Component {
   /////////////////////////////////////////////////////////////////////////
 
   fileSelectB = (event) => {
-    if (this.state.Btype == '' || this.state.automemberid == '') {
+    if (this.state.Btype === '' || this.state.automemberid === '') {
       alert('Insert the Question B Type')
     } else {
       ////////////////////////////////////////
@@ -825,7 +820,7 @@ export class Quizsetuptwo extends Component {
       fd.append('Btype', this.state.Btype)
       axios.post(base.BASE_URL + '/Bimageupload', fd).then((res) => {
         // alert(res.message);
-        if (res.status == '200') {
+        if (res.status === '200') {
           this.setState({ questionimageupload_loader: false })
         } else {
           this.setState({ questionimageupload_loader: false })
@@ -841,7 +836,7 @@ export class Quizsetuptwo extends Component {
   //////////////////////////////////////////////////////////////////////////
 
   fileSelectC = (event) => {
-    if (this.state.Ctype == '' || this.state.automemberid == '') {
+    if (this.state.Ctype === '' || this.state.automemberid === '') {
       alert('Insert the Question C Type')
     } else {
       ////////////////////////////////////////
@@ -869,7 +864,7 @@ export class Quizsetuptwo extends Component {
       fd.append('Ctype', this.state.Ctype)
       axios.post(base.BASE_URL + '/Cimageupload', fd).then((res) => {
         // alert(res.message);
-        if (res.status == '200') {
+        if (res.status === '200') {
           this.setState({ questionimageupload_loader: false })
         } else {
           this.setState({ questionimageupload_loader: false })
@@ -888,7 +883,7 @@ export class Quizsetuptwo extends Component {
   //////////////////////////////////////////////////////////////////////////
 
   fileSelectD = (event) => {
-    if (this.state.Dtype == '' || this.state.automemberid == '') {
+    if (this.state.Dtype === '' || this.state.automemberid === '') {
       alert('Insert the Question C Type')
     } else {
       ////////////////////////////////////////
@@ -916,7 +911,7 @@ export class Quizsetuptwo extends Component {
       fd.append('Dtype', this.state.Dtype)
       axios.post(base.BASE_URL + '/Dimageupload', fd).then((res) => {
         // alert(res.message);
-        if (res.status == '200') {
+        if (res.status === '200') {
           this.setState({ questionimageupload_loader: false })
         } else {
           this.setState({ questionimageupload_loader: false })
@@ -982,7 +977,7 @@ export class Quizsetuptwo extends Component {
   render() {
     // alert(this.state.loggdin);
     const { uploadPercentage } = this.state
-    if (this.state.loggdin == 'start') {
+    if (this.state.loggdin === 'start') {
       return (
         <Redirect
           to={'/Quizsetuplist/' + this.state.examid + '/' + this.state.examname}
@@ -1014,7 +1009,7 @@ export class Quizsetuptwo extends Component {
                     <form className="user">
                       <div class="form-content">
                         <div>
-                          {this.state.loggdin == 'start' ? (
+                          {this.state.loggdin === 'start' ? (
                             <Alert variant="success">
                               <Alert.Heading>Saved</Alert.Heading>
                               <p>Information is saved as you submited</p>
@@ -1088,10 +1083,11 @@ export class Quizsetuptwo extends Component {
                                   hidden
                                 />
 
-                                {this.state.preview == '' ? (
+                                {this.state.preview === '' ? (
                                   ''
                                 ) : (
                                   <img
+                                    alt=""
                                     src={this.state.preview}
                                     style={{
                                       width: 50,
@@ -1153,7 +1149,7 @@ export class Quizsetuptwo extends Component {
                                         />
                                       </td>
                                       <td style={{ width: '10%' }}>
-                                        {this.state.titleonetype == true ? (
+                                        {this.state.titleonetype === true ? (
                                           <div>
                                             <Link
                                               to="#"
@@ -1194,7 +1190,7 @@ export class Quizsetuptwo extends Component {
                                         />
                                       </td>
                                       <td style={{ width: '10%' }}>
-                                        {this.state.titletwotype == true ? (
+                                        {this.state.titletwotype === true ? (
                                           <div>
                                             <Link
                                               to="#"
@@ -1232,7 +1228,7 @@ export class Quizsetuptwo extends Component {
                                         />
                                       </td>
                                       <td style={{ width: '10%' }}>
-                                        {this.state.titlethreetype == true ? (
+                                        {this.state.titlethreetype === true ? (
                                           <div>
                                             <Link
                                               to="#"
@@ -1275,7 +1271,7 @@ export class Quizsetuptwo extends Component {
                                       </td>
 
                                       <td style={{ width: '10%' }}>
-                                        {this.state.titlefourtype == true ? (
+                                        {this.state.titlefourtype === true ? (
                                           <div>
                                             <Link
                                               to="#"
@@ -1316,7 +1312,7 @@ export class Quizsetuptwo extends Component {
                                         />{' '}
                                       </td>
                                       <td style={{ width: '10%' }}>
-                                        {this.state.titlefivetype == true ? (
+                                        {this.state.titlefivetype === true ? (
                                           <div>
                                             <Link
                                               to="#"
@@ -2452,7 +2448,7 @@ export class Quizsetuptwo extends Component {
                                     ) : (
                                       ''
                                     )}
-                                    {this.state.Ctype == 'Image and Text' ? (
+                                    {this.state.Ctype === 'Image and Text' ? (
                                       <div>
                                         <Button
                                           style={{
@@ -2585,7 +2581,7 @@ export class Quizsetuptwo extends Component {
                                   </div>
 
                                   <div>
-                                    {this.state.Dtype == 'Image' ? (
+                                    {this.state.Dtype === 'Image' ? (
                                       <Button
                                         style={{
                                           backgroundColor: 'silver',
@@ -2615,7 +2611,7 @@ export class Quizsetuptwo extends Component {
                                       ''
                                     )}
 
-                                    {this.state.Dtype == 'Image and Text' ? (
+                                    {this.state.Dtype === 'Image and Text' ? (
                                       <Button
                                         style={{
                                           backgroundColor: 'silver',
@@ -2654,7 +2650,7 @@ export class Quizsetuptwo extends Component {
                                     marginTop: 10,
                                   }}
                                 >
-                                  {this.state.Dtype == 'Math' ? (
+                                  {this.state.Dtype === 'Math' ? (
                                     <div>
                                       <EditableMathField
                                         latex={this.state.text9}

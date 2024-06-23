@@ -2,32 +2,25 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router'
 //import useForm from 'react-hook-form'
-import { Button, Form } from 'reactstrap'
+import { Button } from 'reactstrap'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 import { Progress } from 'reactstrap'
 import * as base from './global'
 import axios from 'axios'
 import Header from '../Layout/Header'
-import Footer from '../Layout/Footer'
-import Topbar from '../Layout/Topbar'
 //https://stackoverflow.com/questions/41296668/reactjs-form-input-validation
-import ActivityIndicator from 'react-activity-indicator'
 //npm install react-activity-indicator
 import 'react-activity-indicator/src/activityindicator.css'
 import Alert from 'react-bootstrap/Alert'
-import IconButton from '@material-ui/core/IconButton'
 import ImageIcon from '@mui/icons-material/Image'
-import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import Modal from 'react-modal'
 
-import Parser from 'html-react-parser' // render HTML
-import { addStyles, EditableMathField, StaticMathField } from 'react-mathquill'
-import Editor from './Editor'
-import { ElectricalServicesOutlined } from '@mui/icons-material'
+//import Parser from 'html-react-parser' // render HTML
+import { EditableMathField } from 'react-mathquill'
+//import Editor from './Editor'
+//import { ElectricalServicesOutlined } from '@mui/icons-material'
 import Basic from './Basic'
 import Basictwo from './Basictwo'
 import Basicthree from './Basicthree'
@@ -166,7 +159,7 @@ export class Writtingtest extends Component {
   //handlequestiontime handlepoints questiontime points
 
   titletype1(event) {
-    if (event.target.value == 'Text') {
+    if (event.target.value === 'Text') {
       this.setState({
         titleonetype: false,
       })
@@ -180,7 +173,7 @@ export class Writtingtest extends Component {
     })
   }
   titletype2(event) {
-    if (event.target.value == 'Text') {
+    if (event.target.value === 'Text') {
       this.setState({
         titletwotype: false,
       })
@@ -194,7 +187,7 @@ export class Writtingtest extends Component {
     })
   }
   titletype3(event) {
-    if (event.target.value == 'Text') {
+    if (event.target.value === 'Text') {
       this.setState({
         titlethreetype: false,
       })
@@ -208,7 +201,7 @@ export class Writtingtest extends Component {
     })
   }
   titletype4(event) {
-    if (event.target.value == 'Text') {
+    if (event.target.value === 'Text') {
       this.setState({
         titlefourtype: false,
       })
@@ -222,7 +215,7 @@ export class Writtingtest extends Component {
     })
   }
   titletype5(event) {
-    if (event.target.value == 'Text') {
+    if (event.target.value === 'Text') {
       this.setState({
         titlefivetype: false,
       })
@@ -373,11 +366,11 @@ export class Writtingtest extends Component {
   register() {
     //   alert(this.state.titletypetext1)
     if (
-      this.state.automemberid == '' ||
-      this.state.questiontype == '' ||
-      this.state.points == '' ||
-      this.state.questiontime == '' ||
-      this.state.text == ''
+      this.state.automemberid === '' ||
+      this.state.questiontype === '' ||
+      this.state.points === '' ||
+      this.state.questiontime === '' ||
+      this.state.text === ''
     ) {
       alert('Insert the Required Fields')
     } else {
@@ -415,9 +408,9 @@ export class Writtingtest extends Component {
         .then(
           (response) => {
             //  alert(response.data.status)
-            if (response.data.status == 'found') {
+            if (response.data.status === 'found') {
               this.setState({ loggdin: 'start', loaderfile: 'notloading' })
-            } else if (response.data == 'notfound') {
+            } else if (response.data === 'notfound') {
               alert('x')
             }
           },
@@ -493,7 +486,7 @@ export class Writtingtest extends Component {
   }
 
   fileSelectA = (event) => {
-    if (this.state.Atype == '' || this.state.automemberid == '') {
+    if (this.state.Atype === '' || this.state.automemberid === '') {
       alert('Insert the Question A Type')
     } else {
       ////////////////////////////////////////
@@ -521,7 +514,7 @@ export class Writtingtest extends Component {
       fd.append('Atype', this.state.Atype)
       axios.post(base.BASE_URL + '/Aimageupload', fd).then((res) => {
         // alert(res.message);
-        if (res.status == '200') {
+        if (res.status === '200') {
           this.setState({ questionimageupload_loader: false })
         } else {
           this.setState({ questionimageupload_loader: false })
@@ -537,7 +530,7 @@ export class Writtingtest extends Component {
   /////////////////////////////////////////////////////////////////////////
 
   fileSelectB = (event) => {
-    if (this.state.Btype == '' || this.state.automemberid == '') {
+    if (this.state.Btype === '' || this.state.automemberid === '') {
       alert('Insert the Question B Type')
     } else {
       ////////////////////////////////////////
@@ -565,7 +558,7 @@ export class Writtingtest extends Component {
       fd.append('Btype', this.state.Btype)
       axios.post(base.BASE_URL + '/Bimageupload', fd).then((res) => {
         // alert(res.message);
-        if (res.status == '200') {
+        if (res.status === '200') {
           this.setState({ questionimageupload_loader: false })
         } else {
           this.setState({ questionimageupload_loader: false })
@@ -581,7 +574,7 @@ export class Writtingtest extends Component {
   //////////////////////////////////////////////////////////////////////////
 
   fileSelectC = (event) => {
-    if (this.state.Ctype == '' || this.state.automemberid == '') {
+    if (this.state.Ctype === '' || this.state.automemberid === '') {
       alert('Insert the Question C Type')
     } else {
       ////////////////////////////////////////
@@ -609,7 +602,7 @@ export class Writtingtest extends Component {
       fd.append('Ctype', this.state.Ctype)
       axios.post(base.BASE_URL + '/Cimageupload', fd).then((res) => {
         // alert(res.message);
-        if (res.status == '200') {
+        if (res.status === '200') {
           this.setState({ questionimageupload_loader: false })
         } else {
           this.setState({ questionimageupload_loader: false })
@@ -628,7 +621,7 @@ export class Writtingtest extends Component {
   //////////////////////////////////////////////////////////////////////////
 
   fileSelectD = (event) => {
-    if (this.state.Dtype == '' || this.state.automemberid == '') {
+    if (this.state.Dtype === '' || this.state.automemberid === '') {
       alert('Insert the Question C Type')
     } else {
       ////////////////////////////////////////
@@ -656,7 +649,7 @@ export class Writtingtest extends Component {
       fd.append('Dtype', this.state.Dtype)
       axios.post(base.BASE_URL + '/Dimageupload', fd).then((res) => {
         // alert(res.message);
-        if (res.status == '200') {
+        if (res.status === '200') {
           this.setState({ questionimageupload_loader: false })
         } else {
           this.setState({ questionimageupload_loader: false })
@@ -738,34 +731,34 @@ export class Writtingtest extends Component {
       text: this.state.text + e,
     })
     // alert(e)
-    if (this.state.textarea5 == 'yes') {
+    if (this.state.textarea5 === 'yes') {
       this.setState({
         text5: this.state.text + e,
       })
     }
-    if (this.state.textarea4 == 'yes') {
+    if (this.state.textarea4 === 'yes') {
       this.setState({
         text4: this.state.text + e,
       })
     }
-    if (this.state.textarea3 == 'yes') {
+    if (this.state.textarea3 === 'yes') {
       this.setState({
         text3: this.state.text + e,
       })
     }
-    if (this.state.textarea2 == 'yes') {
+    if (this.state.textarea2 === 'yes') {
       this.setState({
         text2: this.state.text + e,
       })
     }
-    if (this.state.textarea1 == 'yes') {
+    if (this.state.textarea1 === 'yes') {
       this.setState({
         text1: this.state.text + e,
       })
     }
   }
   insertmath = () => {
-    if (this.state.textarea1 == 'yes') {
+    if (this.state.textarea1 === 'yes') {
       this.setState({
         text: this.state.text,
         showmathpopup: false,
@@ -823,7 +816,7 @@ export class Writtingtest extends Component {
   render() {
     // alert(this.state.loggdin);
     const { uploadPercentage } = this.state
-    if (this.state.loggdin == 'start') {
+    if (this.state.loggdin === 'start') {
       return (
         <Redirect
           to={'/Quizsetuplist/' + this.state.examid + '/' + this.state.examname}
@@ -858,7 +851,7 @@ export class Writtingtest extends Component {
                     <form className="user">
                       <div class="form-content">
                         <div>
-                          {this.state.loggdin == 'start' ? (
+                          {this.state.loggdin === 'start' ? (
                             <Alert variant="success">
                               <Alert.Heading>Saved</Alert.Heading>
                               <p>Information is saved as you submited</p>
@@ -964,7 +957,7 @@ export class Writtingtest extends Component {
                               className="form-holder col-md-1"
                               style={{ padding: 10 }}
                             >
-                              {this.state.preview == '' ? (
+                              {this.state.preview === '' ? (
                                 <ImageIcon
                                   style={{
                                     width: 50,
@@ -974,6 +967,7 @@ export class Writtingtest extends Component {
                                 />
                               ) : (
                                 <img
+                                  alt=""
                                   src={this.state.preview}
                                   style={{
                                     width: 50,
@@ -1058,7 +1052,7 @@ export class Writtingtest extends Component {
                                     />
                                   </td>
                                   <td style={{ width: '10%' }}>
-                                    {this.state.titleonetype == true ? (
+                                    {this.state.titleonetype === true ? (
                                       <div>
                                         <Link
                                           to="#"
@@ -1097,7 +1091,7 @@ export class Writtingtest extends Component {
                                     />
                                   </td>
                                   <td style={{ width: '10%' }}>
-                                    {this.state.titletwotype == true ? (
+                                    {this.state.titletwotype === true ? (
                                       <div>
                                         <Link
                                           to="#"
@@ -1133,7 +1127,7 @@ export class Writtingtest extends Component {
                                     />
                                   </td>
                                   <td style={{ width: '10%' }}>
-                                    {this.state.titlethreetype == true ? (
+                                    {this.state.titlethreetype === true ? (
                                       <div>
                                         <Link
                                           to="#"
@@ -1174,7 +1168,7 @@ export class Writtingtest extends Component {
                                   </td>
 
                                   <td style={{ width: '10%' }}>
-                                    {this.state.titlefourtype == true ? (
+                                    {this.state.titlefourtype === true ? (
                                       <div>
                                         <Link
                                           to="#"
@@ -1213,7 +1207,7 @@ export class Writtingtest extends Component {
                                     />{' '}
                                   </td>
                                   <td style={{ width: '10%' }}>
-                                    {this.state.titlefivetype == true ? (
+                                    {this.state.titlefivetype === true ? (
                                       <div>
                                         <Link
                                           to="#"
