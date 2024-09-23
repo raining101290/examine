@@ -249,7 +249,7 @@ export class Addnewexam extends Component {
       const postObj = {
         examname: this.state.fields['examname'],
         examtype: this.state.schoolcollegetype,
-        quizType: this.state.selectedQuizType,
+        quiztype: this.state.selectedQuizType,
         examdate: this.state.fields['examdate'],
         examtime: this.state.fields['examtime'],
         schoolcollegid: this.state.schoolid,

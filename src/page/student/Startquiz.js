@@ -238,10 +238,7 @@ const Startquiz = (props) => {
     setTimeout(() => {
       localStorage.setItem("examrandomid", randomid);
   }, 2000);
-   
-   
   }) */
-  console.log('users::', users.length)
   return (
     <div className="startquiz">
       <Container>

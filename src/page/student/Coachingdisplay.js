@@ -30,6 +30,7 @@ const Coachingdisplay = () => {
     let group = localStorage.getItem('groupname')
     let version = localStorage.getItem('versionname')
     let subject = localStorage.getItem('subject')
+    let quiztype = localStorage.getItem('quiztype')
 
     axios
       .get(
@@ -41,7 +42,9 @@ const Coachingdisplay = () => {
           '/' +
           version +
           '?subjectname=' +
-          subject,
+          subject +
+          '&quiztype=' +
+          quiztype,
         {
           headers: {
             authorization: `bearer ${token}`,
@@ -59,6 +62,16 @@ const Coachingdisplay = () => {
     getData()
     //eslint-disable-next-line
   }, [])
+
+  function isEmpty(obj) {
+    for (const prop in obj) {
+      if (Object.hasOwn(obj, prop)) {
+        return false
+      }
+    }
+
+    return true
+  }
 
   return (
     <Container>
@@ -117,6 +130,13 @@ const Coachingdisplay = () => {
               </div>
             )
           })}
+          {isEmpty(users) && (
+            <Col xs={12} sm={12}>
+              <h3 style={{ margin: '50px 0px 50px 0px', textAlign: 'center' }}>
+                No data found
+              </h3>
+            </Col>
+          )}
         </Row>
         <Row>
           <Col sm={12}>

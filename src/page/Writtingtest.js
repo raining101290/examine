@@ -117,7 +117,9 @@ export class Writtingtest extends Component {
       examname: this.props.match.params.idss,
       questiontype: '',
       questionimageupload_loader: false,
+      answerImageupload_loader: false,
       uploadPercentage: 0,
+      uploadPercentage2: 0,
       questiontitle: '',
       Answer: '',
       writtinganswer: '',
@@ -125,6 +127,7 @@ export class Writtingtest extends Component {
       points: '5',
       editorHtml: '',
       preview: '',
+      preview2: '',
       handlemathpopupClose: false,
       showmathpopup: false,
       mathchange: '',
@@ -422,6 +425,7 @@ export class Writtingtest extends Component {
 
     /////////////////////////////////////////////////////////////////////
   }
+
   fileSelectquestionimage = (event) => {
     if (this.state.questiontype === '' || this.state.automemberid === '') {
       alert('Insert the Question Type')
@@ -475,6 +479,69 @@ export class Writtingtest extends Component {
             )
           } else {
             this.setState({ questionimageupload_loader: false })
+            alert('Failed To Upload')
+          }
+          console.log(res)
+        })
+
+      ///////////////////////////////////////
+    }
+    ////////////
+  }
+
+  UploadanswerImage = (event) => {
+    if (this.state.questiontype === '' || this.state.automemberid === '') {
+      alert('Insert the Question Type')
+    } else {
+      ////////////////////////////////////////
+      this.setState({
+        answerImage: event.target.files[0],
+        answerImageupload_loader: true,
+      })
+      // image preview
+      var file = event.target.files[0]
+      var reader = new FileReader()
+      var url = reader.readAsDataURL(file)
+
+      reader.onloadend = function (e) {
+        this.setState({
+          preview2: [reader.result],
+        })
+      }.bind(this)
+      console.log(url) // Would see a path?
+      // end image previou
+      //////////upload
+      const options = {
+        onUploadProgress: (progressEvent) => {
+          const { loaded, total } = progressEvent
+          let percent = Math.floor((loaded * 100) / total)
+          if (percent < 100) {
+            this.setState({
+              uploadPercentage2: percent,
+            })
+          }
+        },
+      }
+
+      const fd = new FormData()
+      fd.append('profileImg', event.target.files[0], event.target.files[0].name)
+      fd.append('autoincrement', this.state.automemberid)
+      fd.append('questiontype', this.state.questiontype)
+      axios
+        .post(base.BASE_URL + '/answerImageeUpload', fd, options)
+        .then((res) => {
+          // alert(res.message);
+          if (res.status === 200) {
+            this.setState(
+              { answerImageupload_loader: false, uploadPercentage2: 100 },
+              () => {
+                setTimeout(() => {
+                  this.setState({ uploadPercentage2: 0 })
+                }, 1000)
+              },
+            )
+          } else {
+            this.setState({ answerImageupload_loader: false })
             alert('Failed To Upload')
           }
           console.log(res)
@@ -815,7 +882,8 @@ export class Writtingtest extends Component {
 
   render() {
     // alert(this.state.loggdin);
-    const { uploadPercentage } = this.state
+    const { uploadPercentage, uploadPercentage2 } = this.state
+    console.log('this.props.match.params.id,', this.props.match.params.id)
     if (this.state.loggdin === 'start') {
       return (
         <Redirect
@@ -962,7 +1030,7 @@ export class Writtingtest extends Component {
                                   style={{
                                     width: 50,
                                     height: 50,
-                                    marginTop: 20,
+                                    marginTop: 40,
                                   }}
                                 />
                               ) : (
@@ -1612,7 +1680,7 @@ export class Writtingtest extends Component {
 
                           <div className="form-row" style={{ marginTop: 0 }}>
                             <div
-                              className="form-holder col-md-1"
+                              className="form-holder col-md-2"
                               style={{ padding: 10 }}
                             >
                               <p
@@ -1626,7 +1694,7 @@ export class Writtingtest extends Component {
                               </p>
                             </div>
                             <div
-                              className="form-holder col-md-11"
+                              className="form-holder col-md-10"
                               style={{ padding: 10 }}
                             >
                               <textarea
@@ -1638,6 +1706,64 @@ export class Writtingtest extends Component {
                                 value={this.state.writtinganswer}
                                 style={{ width: '100%' }}
                               />
+                            </div>
+                            <div
+                              className="form-holder col-md-2"
+                              style={{ padding: 10 }}
+                            >
+                              <p
+                                style={{
+                                  color: '#000',
+                                  fontSize: 14,
+                                  marginTop: 3,
+                                }}
+                              >
+                                Answer Image
+                              </p>
+                            </div>
+                            <div
+                              className="form-holder col-md-3"
+                              style={{ padding: 10 }}
+                            >
+                              <input
+                                type="file"
+                                onChange={this.UploadanswerImage}
+                                className="form-control"
+                                style={{ marginTop: 12 }}
+                              />
+                            </div>
+                            <div
+                              className="form-holder col-md-3"
+                              style={{ padding: 10 }}
+                            >
+                              {this.state.preview2 === '' ? (
+                                <ImageIcon
+                                  style={{
+                                    width: 50,
+                                    height: 50,
+                                    marginTop: 5,
+                                  }}
+                                />
+                              ) : (
+                                <img
+                                  alt=""
+                                  src={this.state.preview2}
+                                  style={{
+                                    width: 50,
+                                    height: 50,
+                                    marginTop: 5,
+                                  }}
+                                />
+                              )}
+                              {uploadPercentage2 > 0 && (
+                                <Progress
+                                  bar
+                                  color="warning"
+                                  value={uploadPercentage2}
+                                >
+                                  {uploadPercentage2}
+                                </Progress>
+                              )}
                             </div>
                             <div
                               className="form-holder col-md-2"

@@ -24,13 +24,21 @@ export const classes = [
   //   title: 'H.S.C Batch',
   // },
   {
-    id: 'HSC 2024',
+    id: 'Eleven',
     title: 'HSC 1st Year',
   },
   {
-    id: 'HSC 2024',
+    id: 'Twelve',
     title: 'HSC 2nd Year',
   },
+  {
+    id: 'HSC 2024',
+    title: 'HSC 2024',
+  },
+  // {
+  //   id: 'HSC 2024',
+  //   title: 'HSC 2nd Year',
+  // },
   // {
   //   id: 'S.S.C Model Test 2023',
   //   title: 'S.S.C Model Test 2023',

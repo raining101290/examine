@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router'
 //import useForm from 'react-hook-form'
-import { Button, Form } from 'reactstrap'
+import { Button } from 'reactstrap'
 import * as base from './global'
 import axios from 'axios'
 import Header from './Header'
@@ -17,7 +17,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import Input from '@material-ui/core/Input'
-import classdata from './data/class.json'
+//import classdata from './data/class.json'
 
 import 'react-phone-number-input/style.css'
 import MuiPhoneNumber from 'material-ui-phone-number'
@@ -52,7 +52,7 @@ export class Continuewithstudent extends Component {
   }
 
   handleValidation() {
-    let fields = this.state.fields
+    //let fields = this.state.fields
     let errors = {}
     let formIsValid = true
     //  alert(this.state.fields["email"]);
@@ -114,13 +114,13 @@ export class Continuewithstudent extends Component {
           })
           .then(
             (response) => {
-              if (response.data === 'save') {
-                localStorage.setItem('token', response.data.access_token)
+              if (response.data.result === 'save') {
+                localStorage.setItem('token', response.data.token)
                 localStorage.setItem('studentid', this.state.fields['email'])
                 localStorage.setItem('fullname', this.state.fields['name'])
-                localStorage.setItem('className', this.state.className)
-                localStorage.setItem('groupname', this.state.groupname)
-                localStorage.setItem('versionname', this.state.versionname)
+                // localStorage.setItem('className', this.state.className)
+                // localStorage.setItem('groupname', this.state.groupname)
+                // localStorage.setItem('versionname', this.state.versionname)
                 localStorage.setItem('mobileno', this.state.mobileno)
 
                 this.setState({
@@ -245,7 +245,6 @@ export class Continuewithstudent extends Component {
   }
 
   handleOnChangeMobileno = (value) => {
-    console.log('phone code....' + value)
     this.setState({ mobileno: value })
   }
 

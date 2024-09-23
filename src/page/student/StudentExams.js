@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Row from 'react-bootstrap/Row'
+//import Row from 'react-bootstrap/Row'
 // import Col from 'react-bootstrap/Col'
 // import Card from 'react-bootstrap/Card'
 import Studentheader from './Studentheader'
 import Footer from '../Footer'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Coachingdisplay from './Coachingdisplay'
 
 import * as base from '../global'
@@ -23,14 +23,14 @@ const StudentExams = () => {
   const [checktrial, setChecktrial] = useState('')
   const [isloading, setIsloading] = useState(false)
   //paymenthistory className
-  let paymenthistory = require('../course/data.json')
-  const filtered = paymenthistory.filter((data) => {
-    return (
-      data.classname === localStorage.getItem('className') &&
-      data.versionname === localStorage.getItem('versionname') &&
-      data.groupname === localStorage.getItem('groupname')
-    )
-  })
+  // let paymenthistory = require('../course/data.json')
+  // const filtered = paymenthistory.filter((data) => {
+  //   return (
+  //     data.classname === localStorage.getItem('className') &&
+  //     data.versionname === localStorage.getItem('versionname') &&
+  //     data.groupname === localStorage.getItem('groupname')
+  //   )
+  // })
 
   // const getData = () => {
   //   axios
@@ -114,64 +114,68 @@ const StudentExams = () => {
       </Row> */}
       {isloading ? (
         <LoadingSpinner />
-      ) : checkpayment === 0 ? (
-        filtered ? (
-          filtered.map((employee) => {
-            const datap = employee.package
-            return (
-              <Row key={employee.id} className="marginTop100">
-                {datap.map((d) => {
-                  //let packageid = ''
-                  return (
-                    <div class="flex justify-center">
-                      <div class="grid-cols-3 grid">
-                        <div className="card box-shadow">
-                          <div class="card-header text-center">
-                            <h4 class="my-0 font-weight-normal">
-                              {d.packagename}
-                            </h4>
-                          </div>
-                          <div class="card-body text-center">
-                            <h1 class="card-title pricing-card-title">
-                              {d.amount} <small class="text-muted">৳</small>
-                            </h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                              <li>{d.description}</li>
-                            </ul>
-                            {checktrial > 0 && d.amount === 0 ? (
-                              <div class="btn">Expired</div>
-                            ) : (
-                              <Link
-                                to={'/Admissiontestpayment/' + d.packageid}
-                                style={{
-                                  backgroundColor: 'rgb(108, 66, 152)',
-                                  width: '100%',
-                                  height: 40,
-                                  color: '#ffffff',
-                                  borderRadius: 15,
-                                }}
-                                class="btn"
-                              >
-                                Buy Now
-                              </Link>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </Row>
-            )
-          })
-        ) : (
-          ''
-        )
+      ) : // checkpayment === 0 ? (
+      //   filtered ? (
+      //     filtered.map((employee) => {
+      //       const datap = employee.package
+      //       return (
+      //         <Row key={employee.id} className="marginTop100">
+      //           {datap.map((d) => {
+      //             //let packageid = ''
+      //             return (
+      //               <div class="flex justify-center">
+      //                 <div class="grid-cols-3 grid">
+      //                   <div className="card box-shadow">
+      //                     <div class="card-header text-center">
+      //                       <h4 class="my-0 font-weight-normal">
+      //                         {d.packagename}
+      //                       </h4>
+      //                     </div>
+      //                     <div class="card-body text-center">
+      //                       <h1 class="card-title pricing-card-title">
+      //                         {d.amount} <small class="text-muted">৳</small>
+      //                       </h1>
+      //                       <ul class="list-unstyled mt-3 mb-4">
+      //                         <li>{d.description}</li>
+      //                       </ul>
+      //                       {checktrial > 0 && d.amount === 0 ? (
+      //                         <div class="btn">Expired</div>
+      //                       ) : (
+      //                         <Link
+      //                           to={'/Admissiontestpayment/' + d.packageid}
+      //                           style={{
+      //                             backgroundColor: 'rgb(108, 66, 152)',
+      //                             width: '100%',
+      //                             height: 40,
+      //                             color: '#ffffff',
+      //                             borderRadius: 15,
+      //                           }}
+      //                           class="btn"
+      //                         >
+      //                           Buy Now
+      //                         </Link>
+      //                       )}
+      //                     </div>
+      //                   </div>
+      //                 </div>
+      //               </div>
+      //             )
+      //           })}
+      //         </Row>
+      //       )
+      //     })
+      //   ) : (
+      //     ''
+      //   )
+      // ) : (
+      //   ''
+      // )}
+
+      checkpayment > 0 ? (
+        <Coachingdisplay />
       ) : (
         ''
       )}
-
-      {checkpayment > 0 ? <Coachingdisplay /> : ''}
       <Footer />
     </div>
   )

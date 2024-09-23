@@ -66,6 +66,7 @@ const Startquiztwo = (props) => {
   const [fillinthegapanswer, setFillinthegapanswer] = useState('')
   const [mcquseranswer, setMcquseranswer] = useState('')
   const [obid, setObid] = useState('')
+  const [answerImage, setAnswerImage] = useState()
   const [quiztype, setQuiztype] = useState('')
   const [useranswer, setUseranswer] = useState('')
   const [correctanswerschoose, setCorrectanswerschoose] = useState('')
@@ -85,6 +86,7 @@ const Startquiztwo = (props) => {
   const [isloading, setIsloading] = useState(false)
   const [modalIsOpen, setIsOpen] = useState(false)
   const [isOpenquestionimage, setIsOpenquestionimage] = useState(false)
+  const [isOpenAnswerimage, setIsOpenAnswerimage] = useState(false)
 
   const getData = () => {
     // alert(serialid)
@@ -112,6 +114,7 @@ const Startquiztwo = (props) => {
         setExamdb(res.data)
         if (res.data.length > 0) {
           setObid(res.data[0]._id)
+          setAnswerImage(res.data[0].answerimage)
           setAnswer(res.data[0].Answer)
           setQuiztype(res.data[0].quiztype)
           setPoints(res.data[0].point)
@@ -166,7 +169,6 @@ const Startquiztwo = (props) => {
 
   const getid = (A) => {
     if (quiztype === 'MCQ') {
-      console.log('..MCQ...' + A)
       setMcquseranswer(A)
       if (A === answer) {
         setUseranswer('Correct')
@@ -436,7 +438,9 @@ const Startquiztwo = (props) => {
     // alert(html)
     setWrittingtext(html)
   }
-
+  const showAnswer = () => {
+    setIsOpenAnswerimage(true)
+  }
   const fileSelectA = (event) => {
     if (obid === '') {
       alert('Insert the file')
@@ -490,8 +494,19 @@ const Startquiztwo = (props) => {
     return abc?.replace(/[\n\r]+/g, '')
     //return value
   }
+  console.log('answerImage::', answerImage, examdb)
   return (
     <div className="fill-window">
+      {isOpenAnswerimage && (
+        <Lightbox
+          imageTitle="Answer Image"
+          imageCaption="Answer"
+          mainSrc={base.BASE_URL + answerImage}
+          nextSrc=""
+          prevSrc=""
+          onCloseRequest={() => setIsOpenAnswerimage(false)}
+        />
+      )}
       <Container style={{ backgroundColor: '#5d2057' }}>
         {/*      <div style={{ height: '10%', backgroundColor: '#000000' }}> */}
         <Row style={{ marginBottom: 10 }}>
@@ -938,6 +953,14 @@ const Startquiztwo = (props) => {
                           </tr>
                           <tr>
                             <td colspan="3">
+                              {quiztype === 'CQ' && answerImage && (
+                                <Button
+                                  onClick={showAnswer}
+                                  style={{ marginTop: 40 }}
+                                >
+                                  Show Answer
+                                </Button>
+                              )}
                               <Button
                                 onClick={insertMatch}
                                 style={{ marginTop: 40 }}
@@ -972,7 +995,14 @@ const Startquiztwo = (props) => {
                             onChange={handlefillinthegaptext}
                           />
                         </div>
-
+                        {quiztype === 'CQ' && answerImage && (
+                          <Button
+                            onClick={showAnswer}
+                            style={{ marginTop: 40 }}
+                          >
+                            Show Answer
+                          </Button>
+                        )}
                         <Button
                           onClick={playfillinthegap}
                           style={{ marginTop: 40 }}
@@ -1015,7 +1045,14 @@ const Startquiztwo = (props) => {
                                 onChange={handlewrittingtest}
                               />
                             </div>
-
+                            {quiztype === 'CQ' && answerImage && (
+                              <Button
+                                onClick={showAnswer}
+                                style={{ marginTop: 40 }}
+                              >
+                                Show Answer
+                              </Button>
+                            )}
                             <Button
                               onClick={playwrittingtest}
                               style={{ marginTop: 40 }}
@@ -1066,6 +1103,18 @@ const Startquiztwo = (props) => {
                                       marginTop: 7,
                                     }}
                                   />
+                                )}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                {quiztype === 'CQ' && answerImage && (
+                                  <Button
+                                    onClick={showAnswer}
+                                    style={{ marginTop: 40 }}
+                                  >
+                                    Show Answer
+                                  </Button>
                                 )}
                               </td>
                             </tr>

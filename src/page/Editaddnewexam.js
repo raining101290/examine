@@ -63,7 +63,7 @@ export class Editaddnewexam extends Component {
       schoolcollegetype: localStorage.getItem('schoolcollegetype'),
       subjectlist: [],
       examtypes: [],
-      quizType: '',
+      quiztype: '',
       selectedQuizType: '',
       paymenttype: '',
       versionname: '',
@@ -117,7 +117,7 @@ export class Editaddnewexam extends Component {
 
   handleExamType = (event) => {
     const selectedValue = event.target.value
-    this.setState({ quizType: selectedValue })
+    this.setState({ quiztype: selectedValue })
   }
 
   // getgrouplist = () => {
@@ -140,7 +140,7 @@ export class Editaddnewexam extends Component {
           //   schoolcollegename: res.data[0].schoolcollegename,
           examdate: res.data[0].examdate,
           classname: res.data[0].classname,
-          quizType: res.data[0].quizType,
+          quiztype: res.data[0].quiztype,
           examtime: res.data[0].examtime,
           groupname: res.data[0].xgroup,
           sectionname: res.data[0].xsection,
@@ -300,7 +300,7 @@ export class Editaddnewexam extends Component {
         examname: this.state.examname,
         chapter: this.state.chapter,
         examtype: this.state.schoolcollegetype,
-        quizType: this.state.quizType,
+        quiztype: this.state.quiztype,
         examdate: this.state.examdate,
         examtime: this.state.examtime,
         schoolcollegid: this.state.schoolid,
@@ -427,9 +427,9 @@ export class Editaddnewexam extends Component {
                               <select
                                 className="combox"
                                 onChange={(e) =>
-                                  this.setState({ quizType: e.target.value })
+                                  this.setState({ quiztype: e.target.value })
                                 }
-                                value={this.state.quizType} // Set the value attribute
+                                value={this.state.quiztype} // Set the value attribute
                               >
                                 {this.state.examtypes.map((item) => {
                                   return (

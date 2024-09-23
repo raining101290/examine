@@ -22,17 +22,6 @@ const Readmoredetails = (data) => {
   console.log('hhhh' + data.data)
 
   const getData = () => {
-    console.log(
-      base.BASE_URL +
-        '/subjectwisedata/' +
-        localStorage.getItem('className') +
-        '/' +
-        localStorage.getItem('groupname') +
-        '/' +
-        localStorage.getItem('versionname') +
-        '/' +
-        data.data,
-    )
     axios
       .get(
         base.BASE_URL +
@@ -43,7 +32,9 @@ const Readmoredetails = (data) => {
           '/' +
           localStorage.getItem('versionname') +
           '/' +
-          data.data,
+          data.data +
+          '?quiztype=' +
+          localStorage.getItem('quiztype'),
         {
           headers: {
             authorization: `bearer ${localStorage.getItem('token')}`,
@@ -63,36 +54,44 @@ const Readmoredetails = (data) => {
   return (
     <Container style={{ padding: 20, marginTop: 120 }}>
       <Row>
-        {users.map((result, slno) => {
-          // slice 0,5 means limit of index 0 to 5
+        {users.length > 0 ? (
+          users.map((result, slno) => {
+            // slice 0,5 means limit of index 0 to 5
 
-          return (
-            <Col xs={6} sm={2} key={slno}>
-              <Link
-                to={'/Startquiz/' + result._id}
-                style={{ textDecoration: 'none' }}
-              >
-                <Card style={{ marginBottom: 15 }}>
-                  <Examimage data={result._id} />
-                  <Card.Body>
-                    <Card.Title
-                      style={{
-                        textDecoration: 'none',
-                        fontSize: 12,
-                        color: '#000',
-                      }}
-                    >
-                      {result.examname}
-                    </Card.Title>
-                  </Card.Body>
-                  <Card.Footer>
-                    <Remaningquestion data={result._id} />
-                  </Card.Footer>
-                </Card>
-              </Link>
-            </Col>
-          )
-        })}
+            return (
+              <Col xs={6} sm={2} key={slno}>
+                <Link
+                  to={'/Startquiz/' + result._id}
+                  style={{ textDecoration: 'none' }}
+                >
+                  <Card style={{ marginBottom: 15 }}>
+                    <Examimage data={result._id} />
+                    <Card.Body>
+                      <Card.Title
+                        style={{
+                          textDecoration: 'none',
+                          fontSize: 12,
+                          color: '#000',
+                        }}
+                      >
+                        {result.examname}
+                      </Card.Title>
+                    </Card.Body>
+                    <Card.Footer>
+                      <Remaningquestion data={result._id} />
+                    </Card.Footer>
+                  </Card>
+                </Link>
+              </Col>
+            )
+          })
+        ) : (
+          <Col xs={12} sm={12}>
+            <h3 style={{ margin: '50px 0px 50px 0px', textAlign: 'center' }}>
+              No data found
+            </h3>
+          </Col>
+        )}
       </Row>
     </Container>
   )

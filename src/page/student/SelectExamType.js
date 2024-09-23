@@ -66,6 +66,7 @@ const SelectExamType = () => {
         .then((res) => {
           if (res.data) {
             if (res.data.status === 'approved') {
+              localStorage.setItem('quiztype', res.data.type)
               resolve('success')
             } else if (res.data.status === 'pending') {
               resolve('pending')
